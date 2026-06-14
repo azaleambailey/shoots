@@ -165,10 +165,10 @@ body {
 }
 .bio-collage-item:nth-child(2):hover { transform: rotate(-7deg) scale(1.03); }
 
-/* kazak.jpg — lower-left */
+/* trum.jpg — lower-left, landscape */
 .bio-collage-item:nth-child(3) {
-  width: 160px; height: 215px;
-  top: 208px; left: 5px;
+  width: 220px; height: 147px;
+  top: 235px; left: 0;
   transform: rotate(-3deg);
   z-index: 3;
 }
@@ -192,10 +192,10 @@ body {
 }
 .bio-collage-item:nth-child(5):hover { transform: rotate(-4deg) scale(1.03); }
 
-/* trum.jpg — bottom-right, landscape */
+/* kazak.jpg — bottom-right, portrait */
 .bio-collage-item:nth-child(6) {
-  width: 240px; height: 160px;
-  top: 350px; left: 382px;
+  width: 160px; height: 215px;
+  top: 330px; left: 400px;
   transform: rotate(3.5deg);
   z-index: 2;
 }
