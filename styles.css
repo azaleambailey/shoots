@@ -189,7 +189,7 @@ body {
 /* gradv.jpg — bottom-center */
 .bio-collage-item:nth-child(5) {
   width: 165px; height: 220px;
-  top: 393px; left: 148px;
+  top: 428px; left: 148px;
   transform: rotate(-4deg);
   z-index: 1;
 }
