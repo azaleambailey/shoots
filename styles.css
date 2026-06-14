@@ -131,13 +131,16 @@ body {
   overflow: hidden;
   border-radius: 3px;
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* delay z-index reverting so photo stays on top while animating back down */
+  transition: transform 0.6s ease, box-shadow 0.6s ease, z-index 0s 0.6s;
   cursor: pointer;
 }
 
 .bio-collage-item:hover {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
   z-index: 10 !important;
+  /* bring to front instantly, revert after transition ends */
+  transition: transform 0.6s ease, box-shadow 0.6s ease, z-index 0s;
 }
 
 .bio-collage-item img {
@@ -152,7 +155,7 @@ body {
   width: 310px; height: 445px;
   top: 30px; left: 130px;
   transform: rotate(1deg);
-  z-index: 5;
+  z-index: 1;
 }
 .bio-collage-item:nth-child(1):hover { transform: rotate(1deg) scale(1.03); }
 
