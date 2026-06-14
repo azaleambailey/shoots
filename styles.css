@@ -173,10 +173,10 @@ body {
 }
 .bio-collage-item:nth-child(3):hover { transform: rotate(-3deg) scale(1.03); }
 
-/* switz.jpeg — top-right */
+/* switz.jpeg — top-right, landscape */
 .bio-collage-item:nth-child(4) {
-  width: 190px; height: 258px;
-  top: 5px; left: 305px;
+  width: 265px; height: 178px;
+  top: 20px; left: 295px;
   transform: rotate(5deg);
   z-index: 2;
 }
