@@ -5,15 +5,15 @@
 }
 
 :root {
-  --bg: #0e0d0c;
-  --bg-alt: #141210;
-  --surface: #1c1a17;
-  --text: #e8e0d5;
-  --text-muted: #8a8075;
-  --accent: #c8a96e;
-  --border: #2a2722;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --bg: #ffffff;
+  --bg-alt: #f7f6f4;
+  --surface: #eeece9;
+  --text: #111111;
+  --text-muted: #888888;
+  --accent: #111111;
+  --border: #e0ddd9;
+  --font-serif: 'Space Grotesk', system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
 }
 
 html {
@@ -42,7 +42,7 @@ body {
   align-items: center;
   padding: 1.5rem 3rem;
   mix-blend-mode: normal;
-  background: linear-gradient(to bottom, rgba(14,13,12,0.9) 0%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, transparent 100%);
 }
 
 .nav-logo {
@@ -100,9 +100,9 @@ body {
 .hero-name {
   font-family: var(--font-serif);
   font-size: clamp(3.5rem, 8vw, 7rem);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   color: var(--text);
   margin-bottom: 2rem;
 }
@@ -164,9 +164,9 @@ body {
 .section-title {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   margin-bottom: 0.75rem;
 }
 
@@ -248,9 +248,9 @@ body {
 .contact-heading {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 300;
+  font-weight: 700;
   margin-bottom: 2.5rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
 }
 
 .contact-email {
