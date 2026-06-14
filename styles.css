@@ -149,8 +149,8 @@ body {
 
 /* head.jpg — dominant, center */
 .bio-collage-item:nth-child(1) {
-  width: 250px; height: 360px;
-  top: 50px; left: 150px;
+  width: 310px; height: 445px;
+  top: 30px; left: 130px;
   transform: rotate(1deg);
   z-index: 5;
 }
