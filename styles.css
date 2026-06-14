@@ -120,9 +120,10 @@ body {
 
 .bio-collage {
   position: relative;
-  height: 520px;
+  height: 560px;
   flex-shrink: 0;
   width: 100%;
+  overflow: visible;
 }
 
 .bio-collage-item {
@@ -146,19 +147,19 @@ body {
   display: block;
 }
 
-/* head.jpg — dominant, front and center */
+/* head.jpg — dominant, center */
 .bio-collage-item:nth-child(1) {
-  width: 290px; height: 390px;
-  top: 60px; left: 130px;
+  width: 250px; height: 360px;
+  top: 50px; left: 150px;
   transform: rotate(1deg);
   z-index: 5;
 }
 .bio-collage-item:nth-child(1):hover { transform: rotate(1deg) scale(1.03); }
 
-/* tai.jpg — top-left, behind */
+/* germ.JPG — top-left */
 .bio-collage-item:nth-child(2) {
-  width: 185px; height: 250px;
-  top: 15px; left: 10px;
+  width: 165px; height: 225px;
+  top: 0; left: 0;
   transform: rotate(-7deg);
   z-index: 2;
 }
@@ -166,8 +167,8 @@ body {
 
 /* kazak.jpg — lower-left */
 .bio-collage-item:nth-child(3) {
-  width: 180px; height: 245px;
-  top: 250px; left: 0;
+  width: 160px; height: 215px;
+  top: 208px; left: 5px;
   transform: rotate(-3deg);
   z-index: 3;
 }
@@ -175,17 +176,17 @@ body {
 
 /* switz.jpeg — top-right, landscape */
 .bio-collage-item:nth-child(4) {
-  width: 265px; height: 178px;
-  top: 20px; left: 295px;
+  width: 245px; height: 163px;
+  top: 0; left: 383px;
   transform: rotate(5deg);
   z-index: 2;
 }
 .bio-collage-item:nth-child(4):hover { transform: rotate(5deg) scale(1.03); }
 
-/* gradv.jpg — bottom-center, furthest back */
+/* gradv.jpg — bottom-center */
 .bio-collage-item:nth-child(5) {
-  width: 195px; height: 255px;
-  bottom: 0; left: 130px;
+  width: 165px; height: 220px;
+  top: 393px; left: 148px;
   transform: rotate(-4deg);
   z-index: 1;
 }
@@ -193,8 +194,8 @@ body {
 
 /* trum.jpg — bottom-right, landscape */
 .bio-collage-item:nth-child(6) {
-  width: 260px; height: 174px;
-  bottom: 20px; left: 320px;
+  width: 240px; height: 160px;
+  top: 350px; left: 382px;
   transform: rotate(3.5deg);
   z-index: 2;
 }
