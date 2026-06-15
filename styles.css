@@ -332,10 +332,9 @@ body {
   display: block;
 }
 
-/* shad — top-aligned so its upper edge sits flush against the row above */
+/* shad — top-aligned to match the gap spacing of surrounding photos */
 .portrait-grid .photo-slot:nth-child(5) {
   align-self: flex-start;
-  margin-top: -10px;
 }
 
 /* ── Contact ── */
