@@ -327,7 +327,7 @@ body {
 
 /* light — slightly smaller than eyes */
 .portrait-grid .photo-slot:nth-child(4) {
-  width: 430px;
+  width: 360px;
 }
 
 .portrait-grid .photo-slot img {
