@@ -311,7 +311,7 @@ body {
 }
 
 .portrait-grid .photo-slot.portrait {
-  width: 280px;
+  width: 240px;
   aspect-ratio: 2 / 3;
 }
 
@@ -323,6 +323,11 @@ body {
 .portrait-grid .photo-slot.landscape.large {
   width: 660px;
   aspect-ratio: 3 / 2;
+}
+
+/* light — slightly smaller than eyes */
+.portrait-grid .photo-slot:nth-child(4) {
+  width: 560px;
 }
 
 .portrait-grid .photo-slot img {
