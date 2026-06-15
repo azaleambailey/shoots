@@ -332,6 +332,12 @@ body {
   display: block;
 }
 
+/* shad — top-aligned so its upper edge sits flush against the row above */
+.portrait-grid .photo-slot:nth-child(5) {
+  align-self: flex-start;
+  margin-top: -10px;
+}
+
 /* ── Contact ── */
 
 .contact-section {
