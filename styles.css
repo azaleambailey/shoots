@@ -330,6 +330,11 @@ body {
   aspect-ratio: 3 / 2;
 }
 
+.portrait-grid .photo-slot.square {
+  width: 320px;
+  aspect-ratio: 4791 / 5073;
+}
+
 .portrait-grid .photo-slot img {
   width: 100%;
   height: 100%;
