@@ -421,12 +421,12 @@ body {
 
 .orjowan-collage-item.shot-1,
 .orjowan-collage-item.shot-2 {
-  width: 480px;
+  width: 440px;
   aspect-ratio: 3 / 2;
 }
 
 .orjowan-collage-item.shot-3 {
-  width: 660px;
+  width: 700px;
   aspect-ratio: 3 / 2;
 }
 
