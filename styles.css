@@ -395,6 +395,32 @@ body {
   color: var(--text);
 }
 
+/* ── Nina Two-Column Grid ── */
+
+.nina-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.nina-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nina-photo {
+  width: 100%;
+}
+
+.nina-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ── Orjowan Collage (no overlap, no borders) ── */
 
 .orjowan-collage {
