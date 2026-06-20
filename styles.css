@@ -426,6 +426,29 @@ body {
   display: block;
 }
 
+/* ── Dara Two-Column Grid ── */
+
+.dara-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 870px;
+  margin: 0 auto;
+}
+
+.dara-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dara-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ── Orjowan Collage (no overlap, no borders) ── */
 
 .orjowan-collage {
