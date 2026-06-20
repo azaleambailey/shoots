@@ -373,14 +373,6 @@ body {
   opacity: 1;
 }
 
-.portrait-grid .photo-link:hover {
-  opacity: 1;
-}
-
-.portrait-grid .photo-link:hover .photo-overlay {
-  opacity: 0;
-}
-
 /* ── Subject Page (e.g. orjowan.html) ── */
 
 .subject-section {
