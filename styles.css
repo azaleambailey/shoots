@@ -132,16 +132,12 @@ body {
   overflow: hidden;
   border-radius: 3px;
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.12);
-  /* delay z-index reverting so photo stays on top while animating back down */
-  transition: transform 0.6s ease, box-shadow 0.6s ease, z-index 0s 0.6s;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
   cursor: pointer;
 }
 
 .bio-collage-item:hover {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
-  z-index: 10 !important;
-  /* bring to front instantly, revert after transition ends */
-  transition: transform 0.6s ease, box-shadow 0.6s ease, z-index 0s;
 }
 
 .bio-collage-item img {
