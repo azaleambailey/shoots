@@ -401,6 +401,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  max-width: 560px;
 }
 
 .nina-col {
