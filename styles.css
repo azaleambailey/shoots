@@ -379,6 +379,13 @@ body {
   padding-top: 9rem;
 }
 
+.subject-section .photo-slot:hover,
+.subject-section .nina-photo:hover,
+.subject-section .orjowan-collage-item:hover {
+  opacity: 1;
+  cursor: default;
+}
+
 .back-link {
   color: var(--text-muted);
   text-decoration: none;
