@@ -476,6 +476,39 @@ body {
   gap: 10px;
 }
 
+/* ── Dara P3 Grid ── */
+
+.dara-p3-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 6rem auto 0;
+}
+
+.dara-p3-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.dara-p3-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dara-p3-pair {
+  display: flex;
+  gap: 10px;
+}
+
+.dara-p3-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ── Orjowan Collage (no overlap, no borders) ── */
 
 .orjowan-collage {
