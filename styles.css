@@ -488,7 +488,7 @@ body {
 .dara-p3-row {
   display: flex;
   align-items: flex-start;
-  gap: 0;
+  gap: 10px;
 }
 
 .dara-p3-col {
