@@ -481,7 +481,7 @@ body {
 .dara-p3-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
   margin: 6rem auto 0;
 }
 
