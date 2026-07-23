@@ -31,11 +31,11 @@
 
       <!-- Portraiture -->
       <ul class="minimal-name-list section-list hidden-section" data-for="portraiture">
-        <li><a href="dara.html"    data-preview="photos/portraiture/dara/p2/bailey_006 (1).jpg">Dara</a></li>
-        <li><a href="nina.html"    data-preview="photos/portraiture/nina/eyes.jpg">Nina</a></li>
-        <li><a href="isis.html"    data-preview="photos/portraiture/isis/isis_chair-3.jpg">Isis</a></li>
-        <li><a href="nefer.html"   data-preview="photos/portraiture/nefer/light-3.jpg">Nefer</a></li>
-        <li><a href="orjowan.html" data-preview="photos/portraiture/orjowan/azalea0005-3.jpg">Orjowan</a></li>
+        <li><a href="dara.html">Dara</a></li>
+        <li><a href="nina.html">Nina</a></li>
+        <li><a href="isis.html">Isis</a></li>
+        <li><a href="nefer.html">Nefer</a></li>
+        <li><a href="orjowan.html">Orjowan</a></li>
       </ul>
 
       <!-- Graduation -->
@@ -43,10 +43,11 @@
         <li><a href="#" class="muted-link">Coming soon</a></li>
       </ul>
 
-
     </div>
 
     <div class="minimal-preview-area">
+
+      <!-- Azalea Bailey default -->
       <div class="minimal-default" id="site-default">
         <img class="bio-header-photo" src="photos/bio/header-4.jpg" alt="" />
         <p class="minimal-bio">
@@ -56,6 +57,16 @@
           they should be in front of a lens.
         </p>
       </div>
+
+      <!-- Portraiture grid: all 5 photos shown at once -->
+      <div class="portraiture-grid hidden" id="portraiture-default">
+        <a href="dara.html" class="port-item"><img src="photos/portraiture/dara/p2/bailey_006 (1).jpg" alt="Dara" /></a>
+        <a href="nina.html" class="port-item"><img src="photos/portraiture/nina/eyes.jpg" alt="Nina" /></a>
+        <a href="isis.html" class="port-item"><img src="photos/portraiture/isis/isis_chair-3.jpg" alt="Isis" /></a>
+        <a href="nefer.html" class="port-item"><img src="photos/portraiture/nefer/light-3.jpg" alt="Nefer" /></a>
+        <a href="orjowan.html" class="port-item"><img src="photos/portraiture/orjowan/azalea0005-3.jpg" alt="Orjowan" /></a>
+      </div>
+
       <img class="minimal-preview-img" src="" alt="" />
     </div>
   </main>
@@ -63,13 +74,8 @@
   <script>
     const tabs = document.querySelectorAll('.nav-tab');
     const sectionLists = document.querySelectorAll('.section-list');
-    const preview = document.querySelector('.minimal-preview-img');
     const defaultContent = document.getElementById('site-default');
-
-    function resetPreview() {
-      preview.classList.remove('visible');
-      preview.src = '';
-    }
+    const portraitureGrid = document.getElementById('portraiture-default');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', e => {
@@ -80,34 +86,13 @@
         const section = tab.dataset.section;
 
         sectionLists.forEach(list => {
-          if (list.dataset.for === section) {
-            list.classList.remove('hidden-section');
-          } else {
-            list.classList.add('hidden-section');
-          }
+          list.classList.toggle('hidden-section', list.dataset.for !== section);
         });
 
-        resetPreview();
-
-        if (section === 'ab') {
-          defaultContent.classList.remove('hidden');
-        } else {
-          defaultContent.classList.add('hidden');
-        }
+        defaultContent.classList.toggle('hidden', section !== 'ab');
+        portraitureGrid.classList.toggle('hidden', section !== 'portraiture');
       });
     });
-
-    // Preview hover for portraiture names
-    document.querySelectorAll('.minimal-name-list a[data-preview]').forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        preview.src = link.dataset.preview;
-        preview.classList.add('visible');
-      });
-      link.addEventListener('mouseleave', () => {
-        preview.classList.remove('visible');
-      });
-    });
-
   </script>
 
 </body>
