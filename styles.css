@@ -210,14 +210,16 @@ body.minimal {
 
 .port-item {
   display: block;
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
+  max-width: 280px;
 }
 
 .port-item img {
   display: block;
-  max-height: 70vh;
-  width: auto;
+  width: 100%;
   height: auto;
+  max-height: calc(100vh - 10rem);
   transition: opacity 0.2s ease;
 }
 
