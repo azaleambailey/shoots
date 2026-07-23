@@ -198,7 +198,8 @@ body.minimal {
   display: flex;
   flex: 1;
   gap: 10px;
-  align-items: flex-start;
+  align-items: flex-end;
+  justify-content: center;
   transition: opacity 0.4s ease;
   min-width: 0;
 }
@@ -208,33 +209,21 @@ body.minimal {
 }
 
 .port-item {
-  overflow: hidden;
   display: block;
   flex-shrink: 0;
 }
 
 .port-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
   transition: opacity 0.2s ease;
 }
 
 .port-item:hover img {
   opacity: 0.75;
 }
-
-/* Dara — tall left portrait */
-.port-item:nth-child(1) { width: 220px; height: 65vh; margin-top: 0; }
-/* Nina — shorter, drops down */
-.port-item:nth-child(2) { width: 180px; height: 45vh; margin-top: 80px; }
-/* Isis — tall, rises up */
-.port-item:nth-child(3) { width: 200px; height: 60vh; margin-top: 20px; }
-/* Nefer — drops lowest */
-.port-item:nth-child(4) { width: 175px; height: 48vh; margin-top: 110px; }
-/* Orjowan — medium height */
-.port-item:nth-child(5) { width: 185px; height: 55vh; margin-top: 40px; }
 
 .muted-link {
   font-family: 'Courier New', Courier, monospace;
