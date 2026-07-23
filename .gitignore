@@ -1,0 +1,86 @@
+# Never commit the full photo library
+photography_website_photos/
+
+# Ignore all photos by default
+photos/
+
+# Keep only photos currently displayed on the site
+!photos/
+!photos/bio/
+!photos/bio/header-4.jpg
+
+!photos/portraiture/
+!photos/portraiture/dara/
+!photos/portraiture/dara/p1/
+!photos/portraiture/dara/p1/DSC_0160-2.jpg
+!photos/portraiture/dara/p1/DSC_0226-2.jpg
+!photos/portraiture/dara/p1/azalea0007-2.jpg
+!photos/portraiture/dara/p2/
+!photos/portraiture/dara/p2/DSC_0006-6.jpg
+!photos/portraiture/dara/p2/DSC_0085-4.jpg
+!photos/portraiture/dara/p2/DSC_0193-2.jpg
+!photos/portraiture/dara/p2/DSC_0368-3.jpg
+!photos/portraiture/dara/p2/bailey_005 (1).jpg
+!photos/portraiture/dara/p2/bailey_006 (1).jpg
+!photos/portraiture/dara/p3/
+!photos/portraiture/dara/p3/t1/
+!photos/portraiture/dara/p3/t1/DSC_0146.JPG
+!photos/portraiture/dara/p3/t1/DSC_0151.JPG
+!photos/portraiture/dara/p3/t1/DSC_0163.JPG
+!photos/portraiture/dara/p3/t1/DSC_0174.JPG
+!photos/portraiture/dara/p3/t1/DSC_0178.JPG
+!photos/portraiture/dara/p3/t1/DSC_0179.JPG
+!photos/portraiture/dara/p3/t1/DSC_0187.JPG
+!photos/portraiture/dara/p3/t1/DSC_0205.JPG
+!photos/portraiture/dara/p3/t1/DSC_0282.JPG
+!photos/portraiture/dara/p3/t1/DSC_0300.JPG
+!photos/portraiture/dara/p3/t2/
+!photos/portraiture/dara/p3/t2/DSC_0808.JPG
+!photos/portraiture/dara/p3/t2/DSC_0813.JPG
+!photos/portraiture/dara/p3/t2/DSC_0816.JPG
+!photos/portraiture/dara/p3/t2/DSC_0875.JPG
+!photos/portraiture/dara/p3/t2/DSC_0876.JPG
+!photos/portraiture/dara/p3/t2/DSC_0877.JPG
+!photos/portraiture/dara/p3/t3/
+!photos/portraiture/dara/p3/t3/DSC_0683.JPG
+!photos/portraiture/dara/p3/t4/
+!photos/portraiture/dara/p3/t4/DSC_0635.JPG
+!photos/portraiture/dara/p3/t4/DSC_0663.JPG
+!photos/portraiture/dara/p3/t5/
+!photos/portraiture/dara/p3/t5/DSC_0130.JPG
+!photos/portraiture/dara/p3/t5/DSC_0264.JPG
+!photos/portraiture/dara/p3/t5/DSC_0265.JPG
+!photos/portraiture/dara/p3/t5/DSC_0342.JPG
+!photos/portraiture/dara/p3/t5/DSC_0403.JPG
+!photos/portraiture/dara/p3/t6/
+!photos/portraiture/dara/p3/t6/DSC_0966.JPG
+!photos/portraiture/dara/p3/t7/
+!photos/portraiture/dara/p3/t7/DSC_0464.JPG
+!photos/portraiture/dara/p3/t7/DSC_0465.JPG
+
+!photos/portraiture/isis/
+!photos/portraiture/isis/isis_chair-3.jpg
+!photos/portraiture/isis/DSC_0977-2.jpg
+!photos/portraiture/isis/DSC_0664-2.jpg
+
+!photos/portraiture/nefer/
+!photos/portraiture/nefer/Azalea09-4.jpg
+!photos/portraiture/nefer/Azalea13-4.jpg
+!photos/portraiture/nefer/light-3.jpg
+!photos/portraiture/nefer/DSC_0281 copy-6.jpg
+!photos/portraiture/nefer/DSC_0312 copy-3.jpg
+!photos/portraiture/nefer/DSC_0322 copy-3.jpg
+
+!photos/portraiture/nina/
+!photos/portraiture/nina/Azalea12-3.jpg
+!photos/portraiture/nina/DSC_0279-4.jpg
+!photos/portraiture/nina/DSC_0297-6.jpg
+!photos/portraiture/nina/DSC_0351-3.jpg
+!photos/portraiture/nina/DSC_0389-5.jpg
+!photos/portraiture/nina/DSC_0873.jpg
+!photos/portraiture/nina/eyes.jpg
+
+!photos/portraiture/orjowan/
+!photos/portraiture/orjowan/shad.JPG
+!photos/portraiture/orjowan/azalea0005-3.jpg
+!photos/portraiture/orjowan/azalea0004-2.jpg

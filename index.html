@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azalea Bailey — Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="minimal">
+
+  <nav class="nav-minimal">
+    <ul class="nav-minimal-tabs">
+      <li><a href="#" class="nav-tab active" data-section="ab">Azalea Bailey</a></li>
+      <li><a href="#" class="nav-tab" data-section="portraiture">Portraiture</a></li>
+      <li><a href="#" class="nav-tab" data-section="graduation">Graduation</a></li>
+    </ul>
+  </nav>
+
+  <main class="minimal-main">
+    <div class="minimal-list">
+
+      <!-- Azalea Bailey -->
+      <ul class="minimal-name-list section-list" data-for="ab">
+        <li><a href="mailto:azalea.mbailey@gmail.com">azalea.mbailey@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/azaleambailey/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/azalea.maharani/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <p class="minimal-bio section-list ab-bio" data-for="ab">
+        I'm a portrait photographer drawn to the quiet moments — the ones that happen
+        between poses, between words. My work lives at the intersection of natural light
+        and genuine emotion, capturing people as they truly are rather than who they think
+        they should be in front of a lens.
+      </p>
+
+      <!-- Portraiture -->
+      <ul class="minimal-name-list section-list hidden-section" data-for="portraiture">
+        <li><a href="dara.html"    data-preview="photos/portraiture/dara/p2/bailey_006 (1).jpg">Dara</a></li>
+        <li><a href="nina.html"    data-preview="photos/portraiture/nina/eyes.jpg">Nina</a></li>
+        <li><a href="isis.html"    data-preview="photos/portraiture/isis/isis_chair-3.jpg">Isis</a></li>
+        <li><a href="nefer.html"   data-preview="photos/portraiture/nefer/light-3.jpg">Nefer</a></li>
+        <li><a href="orjowan.html" data-preview="photos/portraiture/orjowan/azalea0005-3.jpg">Orjowan</a></li>
+      </ul>
+
+      <!-- Graduation -->
+      <ul class="minimal-name-list section-list hidden-section" data-for="graduation">
+        <li><a href="#" class="muted-link">Coming soon</a></li>
+      </ul>
+
+
+    </div>
+
+    <div class="minimal-preview-area">
+      <div class="minimal-default" id="site-default">
+        <img class="bio-header-photo" src="photos/bio/header-4.jpg" alt="" />
+      </div>
+      <img class="minimal-preview-img" src="" alt="" />
+    </div>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll('.nav-tab');
+    const sectionLists = document.querySelectorAll('.section-list');
+    const preview = document.querySelector('.minimal-preview-img');
+    const defaultContent = document.getElementById('site-default');
+
+    function resetPreview() {
+      preview.classList.remove('visible');
+      preview.src = '';
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', e => {
+        e.preventDefault();
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const section = tab.dataset.section;
+
+        sectionLists.forEach(list => {
+          if (list.dataset.for === section) {
+            list.classList.remove('hidden-section');
+          } else {
+            list.classList.add('hidden-section');
+          }
+        });
+
+        resetPreview();
+
+        if (section === 'ab') {
+          defaultContent.classList.remove('hidden');
+        } else {
+          defaultContent.classList.add('hidden');
+        }
+      });
+    });
+
+    // Preview hover for portraiture names
+    document.querySelectorAll('.minimal-name-list a[data-preview]').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        preview.src = link.dataset.preview;
+        preview.classList.add('visible');
+      });
+      link.addEventListener('mouseleave', () => {
+        preview.classList.remove('visible');
+      });
+    });
+
+  </script>
+
+</body>
+</html>
