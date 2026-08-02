@@ -213,7 +213,7 @@ body.minimal {
 
 .port-main img {
   display: block;
-  max-height: 49vh;
+  max-height: 45vh;
   width: auto;
   height: auto;
   transition: opacity 0.2s ease;
@@ -258,7 +258,7 @@ body.minimal {
 
 /* Dara — larger than the other right-panel photos */
 .port-row:first-child .port-item:first-child img {
-  max-height: 44vh;
+  max-height: 48vh;
 }
 
 .muted-link {
