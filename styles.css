@@ -240,6 +240,12 @@ body.minimal {
   align-self: flex-end;
 }
 
+/* Nefer — tiny bit bigger */
+.port-row:last-child .port-item:first-child img { max-height: 29vh; }
+
+/* Orjowan — slightly smaller */
+.port-row:last-child .port-item:last-child img { max-height: 23vh; }
+
 /* Each photo at natural proportions, roughly half of Isis height */
 .port-item {
   display: block;
