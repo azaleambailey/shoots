@@ -213,7 +213,7 @@ body.minimal {
 
 .port-main img {
   display: block;
-  max-height: 45vh;
+  max-height: 40vh;
   width: auto;
   height: auto;
   transition: opacity 0.2s ease;
@@ -240,8 +240,8 @@ body.minimal {
   align-self: flex-end;
 }
 
-/* Nefer — tiny bit bigger */
-.port-row:last-child .port-item:first-child img { max-height: 29vh; }
+/* Nefer — smaller than before but bigger than Orjowan */
+.port-row:last-child .port-item:first-child img { max-height: 26vh; }
 
 /* Orjowan — slightly smaller */
 .port-row:last-child .port-item:last-child img { max-height: 23vh; }
@@ -254,7 +254,7 @@ body.minimal {
 
 .port-item img {
   display: block;
-  max-height: 27vh;
+  max-height: 32vh;
   width: auto;
   height: auto;
   transition: opacity 0.2s ease;
