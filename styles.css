@@ -217,7 +217,8 @@ body.minimal {
 /* Nefer → column 2, row 2 */
 .port-item:nth-child(4) { grid-column: 2; grid-row: 2; }
 /* Orjowan → column 3, row 2 */
-.port-item:nth-child(5) { grid-column: 3; grid-row: 2; }
+.port-item:nth-child(5) { grid-column: 3; grid-row: 2; display: flex; align-items: center; justify-content: center; }
+.port-item:nth-child(5) img { width: 72%; height: 72%; }
 
 .port-item {
   display: block;
