@@ -197,7 +197,7 @@ body.minimal {
 .portraiture-grid {
   display: grid;
   flex: 1;
-  grid-template-columns: 1fr 1.2fr 1.6fr;
+  grid-template-columns: 1fr 1.45fr 1.6fr;
   grid-template-rows: 1fr 1fr;
   gap: 0;
   height: calc(100vh - 10rem);
