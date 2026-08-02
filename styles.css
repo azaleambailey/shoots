@@ -225,7 +225,7 @@ body.minimal {
 .port-grid-right {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
   flex-shrink: 0;
 }
 
@@ -233,6 +233,11 @@ body.minimal {
   display: flex;
   gap: 10px;
   align-items: flex-start;
+}
+
+/* Nina — bottom-aligned so its bottom edge meets Orjowan's top edge */
+.port-row:first-child .port-item:last-child {
+  align-self: flex-end;
 }
 
 /* Each photo at natural proportions, roughly half of Isis height */
