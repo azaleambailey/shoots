@@ -194,6 +194,38 @@ body.minimal {
   display: none;
 }
 
+/* ── Graduation Grid ── */
+
+.grad-grid {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.grad-grid.hidden { display: none; }
+
+.grad-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grad-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body.grad-active .minimal-preview-area {
+  overflow-y: auto;
+  max-height: calc(100vh - 7rem - 3rem);
+  align-items: flex-start;
+}
+
+/* ── Portraiture Overview Grid ── */
+
 .portraiture-grid {
   display: flex;
   gap: 12px;

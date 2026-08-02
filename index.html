@@ -40,7 +40,6 @@
 
       <!-- Graduation -->
       <ul class="minimal-name-list section-list hidden-section" data-for="graduation">
-        <li><a href="#" class="muted-link">Coming soon</a></li>
       </ul>
 
     </div>
@@ -73,6 +72,28 @@
         </div>
       </div>
 
+      <!-- Graduation grid -->
+      <div class="grad-grid hidden" id="graduation-default">
+        <div class="grad-col">
+          <div class="grad-item"><img src="photos/grad/DSC2_0118-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0085-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0223-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0350-2.jpg" alt="Graduation" /></div>
+        </div>
+        <div class="grad-col">
+          <div class="grad-item"><img src="photos/grad/DSC2_0286-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0182-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0266-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0633-2.jpg" alt="Graduation" /></div>
+        </div>
+        <div class="grad-col">
+          <div class="grad-item"><img src="photos/grad/DSC_0381-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0056-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0381 copy-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0835-2.jpg" alt="Graduation" /></div>
+        </div>
+      </div>
+
       <img class="minimal-preview-img" src="" alt="" />
     </div>
   </main>
@@ -82,6 +103,7 @@
     const sectionLists = document.querySelectorAll('.section-list');
     const defaultContent = document.getElementById('site-default');
     const portraitureGrid = document.getElementById('portraiture-default');
+    const graduationGrid = document.getElementById('graduation-default');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', e => {
@@ -97,6 +119,8 @@
 
         defaultContent.classList.toggle('hidden', section !== 'ab');
         portraitureGrid.classList.toggle('hidden', section !== 'portraiture');
+        graduationGrid.classList.toggle('hidden', section !== 'graduation');
+        document.body.classList.toggle('grad-active', section === 'graduation');
       });
     });
   </script>
