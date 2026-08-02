@@ -211,9 +211,9 @@ body.minimal {
   gap: 10px;
 }
 
-.grad-col-sm { flex: 0 0 20%; }
-.grad-col-lg { flex: 0 0 30%; }
-.grad-col-md { flex: 1; }
+.grad-col-sm  { flex: 0 0 20%; }
+.grad-col-lg  { flex: 0 0 30%; }
+.grad-col-right { flex: 1; }
 
 .grad-item img {
   width: 100%;

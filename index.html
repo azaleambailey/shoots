@@ -74,24 +74,24 @@
 
       <!-- Graduation grid -->
       <div class="grad-grid hidden" id="graduation-default">
-        <div class="grad-col grad-col-sm">
+        <div class="grad-col grad-col-sm" id="grad-col-left">
           <div class="grad-item"><img src="photos/grad/DSC_0085-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0182-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0350-2.jpg" alt="Graduation" /></div>
         </div>
         <div class="grad-col grad-col-lg">
-          <div class="grad-item"><img src="photos/grad/DSC2_0118-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img id="grad-landscape-hero" src="photos/grad/DSC2_0118-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0266-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0381-2.jpg" alt="Graduation" /></div>
         </div>
-        <div class="grad-col grad-col-md">
+        <div class="grad-col grad-col-right" id="grad-col-r1">
           <div class="grad-item"><img src="photos/grad/DSC2_0286-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0223-2.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0633-2.jpg" alt="Graduation" /></div>
-        </div>
-        <div class="grad-col grad-col-md">
           <div class="grad-item"><img src="photos/grad/DSC_0056-2.jpg" alt="Graduation" /></div>
+        </div>
+        <div class="grad-col grad-col-right" id="grad-col-r2">
           <div class="grad-item"><img src="photos/grad/DSC_0381 copy-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0633-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0835-2.jpg" alt="Graduation" /></div>
         </div>
       </div>
@@ -106,6 +106,27 @@
     const defaultContent = document.getElementById('site-default');
     const portraitureGrid = document.getElementById('portraiture-default');
     const graduationGrid = document.getElementById('graduation-default');
+
+    function layoutGradGrid() {
+      requestAnimationFrame(() => {
+        const hero = document.getElementById('grad-landscape-hero');
+        if (!hero) return;
+        const lh = hero.offsetHeight;
+        if (lh === 0) return;
+        const gap = 10;
+        // left col starts below landscape; right cols start 45% down the landscape
+        document.getElementById('grad-col-left').style.marginTop = (lh + gap) + 'px';
+        document.getElementById('grad-col-r1').style.marginTop = Math.round(lh * 0.45) + 'px';
+        document.getElementById('grad-col-r2').style.marginTop = Math.round(lh * 0.45) + 'px';
+      });
+    }
+
+    const heroImg = document.getElementById('grad-landscape-hero');
+    if (heroImg) {
+      heroImg.addEventListener('load', layoutGradGrid);
+      if (heroImg.complete && heroImg.naturalHeight) layoutGradGrid();
+    }
+    window.addEventListener('resize', layoutGradGrid);
 
     tabs.forEach(tab => {
       tab.addEventListener('click', e => {
@@ -123,6 +144,8 @@
         portraitureGrid.classList.toggle('hidden', section !== 'portraiture');
         graduationGrid.classList.toggle('hidden', section !== 'graduation');
         document.body.classList.toggle('grad-active', section === 'graduation');
+
+        if (section === 'graduation') setTimeout(layoutGradGrid, 50);
       });
     });
   </script>
