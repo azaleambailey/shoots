@@ -621,7 +621,17 @@ body.minimal {
 /* ── Subject Page (e.g. orjowan.html) ── */
 
 .subject-section {
-  padding-top: 9rem;
+  padding-top: 7rem;
+  border-bottom: none;
+}
+
+.subject-name {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  display: block;
+  margin-bottom: 2rem;
 }
 
 .subject-section .photo-slot:hover,
