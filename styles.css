@@ -225,7 +225,7 @@ body.minimal {
 .port-grid-right {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 10px;
   flex-shrink: 0;
 }
 
