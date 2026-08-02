@@ -689,6 +689,7 @@ body.minimal {
   gap: 10px;
   max-width: 870px;
   margin: 0 auto;
+  padding-left: 80px;
 }
 
 .dara-col {
