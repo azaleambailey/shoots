@@ -195,49 +195,65 @@ body.minimal {
 }
 
 .portraiture-grid {
-  display: grid;
+  display: flex;
   flex: 1;
-  grid-template-columns: 1fr 1.45fr 1.6fr;
-  grid-template-rows: 1fr 1fr;
   gap: 5px;
   height: calc(100vh - 10rem);
   min-width: 0;
+  align-items: stretch;
 }
 
 .portraiture-grid.hidden {
   display: none;
 }
 
-/* Dara → column 2, row 1 */
-.port-item:nth-child(1) { grid-column: 2; grid-row: 1; }
-/* Nina → column 3, row 1 */
-.port-item:nth-child(2) { grid-column: 3; grid-row: 1; }
-/* Isis → column 1, spans full height */
-.port-item:nth-child(3) { grid-column: 1; grid-row: 1 / 3; }
-/* Nefer → column 2, row 2 */
-.port-item:nth-child(4) { grid-column: 2; grid-row: 2; }
-/* Orjowan → column 3, row 2 */
-.port-item:nth-child(5) { grid-column: 3; grid-row: 2; display: flex; align-items: center; justify-content: center; }
-.port-item:nth-child(5) img { width: 72%; height: 72%; }
+/* Isis — left panel, full height, natural width */
+.port-main {
+  display: block;
+  flex-shrink: 0;
+}
 
+.port-main img {
+  display: block;
+  height: 100%;
+  width: auto;
+  transition: opacity 0.2s ease;
+}
+
+.port-main:hover img { opacity: 0.75; }
+
+/* Right panel — two rows */
+.port-grid-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 5px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.port-row {
+  display: flex;
+  flex: 1;
+  gap: 5px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Each photo fills row height, natural width */
 .port-item {
   display: block;
-  overflow: hidden;
-  min-height: 0;
+  flex-shrink: 0;
 }
 
 .port-item img {
   display: block;
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  width: auto;
   transition: opacity 0.2s ease;
 }
 
-.port-item:hover img {
-  opacity: 0.75;
-}
+.port-item:hover img { opacity: 0.75; }
 
 .muted-link {
   font-family: 'Courier New', Courier, monospace;
