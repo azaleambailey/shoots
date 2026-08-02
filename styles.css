@@ -199,7 +199,7 @@ body.minimal {
   flex: 1;
   grid-template-columns: 1fr 1.2fr 1.6fr;
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  gap: 0;
   height: calc(100vh - 10rem);
   min-width: 0;
 }
