@@ -213,7 +213,22 @@ body.minimal {
 
 .grad-col-sm  { flex: 0 0 20%; }
 .grad-col-lg  { flex: 0 0 30%; }
-.grad-col-right { flex: 1; }
+
+.grad-right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grad-right-row {
+  display: flex;
+  gap: 10px;
+}
+
+.grad-right-row .grad-item {
+  flex: 1;
+}
 
 .grad-item img {
   width: 100%;
