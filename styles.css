@@ -196,18 +196,16 @@ body.minimal {
 
 .portraiture-grid {
   display: flex;
-  flex: 1;
-  gap: 5px;
-  height: calc(100vh - 10rem);
+  gap: 12px;
+  align-items: center;
   min-width: 0;
-  align-items: stretch;
 }
 
 .portraiture-grid.hidden {
   display: none;
 }
 
-/* Isis — left panel, full height, natural width */
+/* Isis — left panel, natural size */
 .port-main {
   display: block;
   flex-shrink: 0;
@@ -215,8 +213,9 @@ body.minimal {
 
 .port-main img {
   display: block;
-  height: 100%;
+  max-height: 56vh;
   width: auto;
+  height: auto;
   transition: opacity 0.2s ease;
 }
 
@@ -226,21 +225,17 @@ body.minimal {
 .port-grid-right {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  gap: 5px;
-  min-width: 0;
-  overflow: hidden;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .port-row {
   display: flex;
-  flex: 1;
-  gap: 5px;
-  min-height: 0;
-  overflow: hidden;
+  gap: 10px;
+  align-items: flex-start;
 }
 
-/* Each photo fills row height, natural width */
+/* Each photo at natural proportions, roughly half of Isis height */
 .port-item {
   display: block;
   flex-shrink: 0;
@@ -248,8 +243,9 @@ body.minimal {
 
 .port-item img {
   display: block;
-  height: 100%;
+  max-height: 27vh;
   width: auto;
+  height: auto;
   transition: opacity 0.2s ease;
 }
 
