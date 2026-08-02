@@ -213,7 +213,7 @@ body.minimal {
 
 .port-main img {
   display: block;
-  max-height: 44vh;
+  max-height: 49vh;
   width: auto;
   height: auto;
   transition: opacity 0.2s ease;
@@ -239,6 +239,9 @@ body.minimal {
 .port-row:first-child .port-item:last-child {
   align-self: flex-end;
 }
+
+/* Nina/eyes — slightly larger than default */
+.port-row:first-child .port-item:last-child img { max-height: 37vh; }
 
 /* Nefer — smaller than before but bigger than Orjowan */
 .port-row:last-child .port-item:first-child img { max-height: 26vh; }
