@@ -211,7 +211,7 @@ body.minimal {
   gap: 10px;
 }
 
-.grad-col-sm  { flex: 0 0 16%; }
+.grad-col-sm  { flex: 0 0 20%; }
 .grad-col-lg  { flex: 0 0 33%; }
 
 .grad-right-section {
