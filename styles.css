@@ -236,6 +236,11 @@ body.minimal {
   display: block;
 }
 
+#grad-landscape-hero {
+  margin-left: calc(-49% - 10px);
+  width: calc(149% + 10px);
+}
+
 body.grad-active .minimal-preview-area {
   overflow-y: auto;
   max-height: calc(100vh - 7rem - 3rem);
