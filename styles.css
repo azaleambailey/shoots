@@ -212,7 +212,7 @@ body.minimal {
 }
 
 .grad-col-sm  { flex: 0 0 16%; }
-.grad-col-lg  { flex: 0 0 27%; }
+.grad-col-lg  { flex: 0 0 33%; }
 
 .grad-right-section {
   flex: 1;
