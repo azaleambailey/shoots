@@ -241,6 +241,10 @@ body.minimal {
   width: calc(122% + 10px);
 }
 
+#dsc2-0118 {
+  width: 65%;
+}
+
 body.grad-active .minimal-preview-area {
   overflow-y: auto;
   max-height: calc(100vh - 7rem - 3rem);
