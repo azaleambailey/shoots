@@ -237,8 +237,8 @@ body.minimal {
 }
 
 #grad-landscape-hero {
-  margin-left: calc(-49% - 10px);
-  width: calc(149% + 10px);
+  margin-left: calc(-35% - 10px);
+  width: calc(135% + 10px);
 }
 
 body.grad-active .minimal-preview-area {
