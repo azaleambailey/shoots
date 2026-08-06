@@ -241,9 +241,13 @@ body.minimal {
   width: calc(122% + 10px);
 }
 
+.grad-item-centered {
+  display: flex;
+  justify-content: center;
+}
+
 #dsc2-0118 {
   width: 82%;
-  margin: 0 auto;
 }
 
 body.grad-active .minimal-preview-area {
