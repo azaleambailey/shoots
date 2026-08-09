@@ -769,9 +769,23 @@ body.grad-active .minimal-list {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  max-width: 870px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-left: 300px;
+}
+
+.dara-text-col {
+  flex: 1;
+  padding-top: 160px;
+  padding-right: 2rem;
+}
+
+.dara-intro-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 240px;
 }
 
 .dara-col {
