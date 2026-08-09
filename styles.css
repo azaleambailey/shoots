@@ -237,8 +237,8 @@ body.minimal {
 }
 
 #grad-landscape-hero {
-  margin-left: calc(-22% - 10px);
-  width: calc(122% + 10px);
+  margin-left: calc(-20vw - 2rem);
+  width: calc(100% + 20vw + 2rem);
 }
 
 .grad-item-centered {
