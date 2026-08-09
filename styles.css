@@ -230,6 +230,15 @@ body.minimal {
   flex: 1;
 }
 
+.grad-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  max-width: 320px;
+  line-height: 1.6;
+}
+
 .grad-item img {
   width: 100%;
   height: auto;
