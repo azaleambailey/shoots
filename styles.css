@@ -243,7 +243,7 @@ body.minimal {
 
 .grad-item-centered {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 #dsc2-0118 {
