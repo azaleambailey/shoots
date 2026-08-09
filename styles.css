@@ -830,11 +830,27 @@ body.grad-active .minimal-list {
 
 /* ── Dara P3 Grid ── */
 
+.dara-p3-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 6rem auto 0;
+}
+
+.dara-p3-text {
+  flex: 0 0 200px;
+  padding-top: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 .dara-p3-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 6rem auto 0;
 }
 
 .dara-p3-row {
