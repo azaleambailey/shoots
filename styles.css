@@ -1067,3 +1067,264 @@ body.grad-active .minimal-list {
     grid-row: span 1;
   }
 }
+
+/* ── Mobile: main site layout + all subject pages ── */
+
+@media (max-width: 768px) {
+
+  /* Nav */
+  .nav-minimal {
+    padding: 1rem 1.25rem;
+  }
+
+  /* Main page */
+  body.minimal {
+    overflow-y: auto;
+  }
+
+  .minimal-main {
+    flex-direction: column;
+    padding: 4.5rem 1.25rem 3rem;
+    gap: 1.5rem;
+  }
+
+  .minimal-list {
+    flex: none;
+    height: auto;
+  }
+
+  .minimal-preview-area,
+  body.grad-active .minimal-preview-area {
+    flex: none;
+    overflow-y: visible;
+    max-height: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .bio-header-photo {
+    max-height: 55vh;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /* Portraiture overview */
+  .portraiture-grid {
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 0;
+    gap: 8px;
+  }
+
+  .port-main img {
+    max-height: none;
+    width: 100%;
+  }
+
+  .port-grid-right {
+    width: 100%;
+  }
+
+  .port-item img,
+  .port-row:first-child .port-item:first-child img,
+  .port-row:first-child .port-item:last-child img,
+  .port-row:last-child .port-item:first-child img,
+  .port-row:last-child .port-item:last-child img {
+    max-height: none;
+    width: 100%;
+  }
+
+  /* Graduation grid */
+  .grad-grid {
+    flex-direction: column;
+  }
+
+  .grad-col-sm,
+  .grad-col-lg {
+    flex: none;
+    width: 100%;
+  }
+
+  .grad-right-section {
+    flex: none;
+    width: 100%;
+  }
+
+  #grad-col-left,
+  #grad-col-r1 {
+    margin-top: 0 !important;
+  }
+
+  #grad-landscape-hero {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Subject pages */
+  .gallery-section {
+    padding: 5rem 1.25rem 2rem;
+  }
+
+  .subject-section {
+    padding-top: 5rem;
+  }
+
+  /* Isis */
+  .portrait-grid {
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 0;
+    justify-content: flex-start;
+    max-width: 100% !important;
+    gap: 8px;
+  }
+
+  .portrait-grid .photo-slot {
+    width: 100% !important;
+    align-self: stretch !important;
+  }
+
+  .subject-caption {
+    max-width: 100%;
+    margin-top: 1rem !important;
+  }
+
+  /* Nina */
+  .nina-grid {
+    flex-direction: column;
+    transform: none !important;
+    padding-left: 0;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .nina-col {
+    flex: none !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .nina-photo {
+    width: 100% !important;
+  }
+
+  .nina-grid > div:last-child {
+    flex: none !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  /* Nefer outer wrapper (unstyled div direct child of subject-section) */
+  .subject-section > div:not([class])[style] {
+    flex-direction: column !important;
+    max-width: 100% !important;
+  }
+
+  .subject-section > div:not([class])[style] > div:last-child {
+    flex: none !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  /* Dara */
+  .dara-grid,
+  .dara-p2,
+  .dara-p3-wrapper {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .dara-text-col {
+    flex: none;
+    padding-top: 0;
+    padding-right: 0;
+  }
+
+  .dara-p3-text {
+    flex: none;
+    padding-top: 0;
+  }
+
+  .dara-col {
+    flex: none !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .dara-photo {
+    width: 100% !important;
+    height: auto;
+  }
+
+  .dara-p2-right {
+    margin-top: 0 !important;
+    width: 100%;
+  }
+
+  .dara-p2-top {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dara-p2-middle {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dara-p2 > div:last-child {
+    flex: none !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  .dara-p3-section {
+    margin: 0;
+  }
+
+  .dara-p3-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dara-p3-col {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .dara-p3-pair {
+    gap: 8px;
+  }
+
+  .dara-p3-pair > div {
+    width: calc(50% - 4px) !important;
+  }
+
+  /* Orjowan */
+  .orjowan-collage {
+    flex-direction: column;
+    padding-left: 0;
+    align-items: stretch;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .orjowan-collage-col {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .orjowan-collage-item.shot-1,
+  .orjowan-collage-item.shot-2,
+  .orjowan-collage-item.shot-3 {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .orjowan-collage > div:last-child {
+    flex: none !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+}
