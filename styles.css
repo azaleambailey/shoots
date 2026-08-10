@@ -108,13 +108,7 @@ body.ab-active .minimal-list {
 }
 
 .ab-bio-mobile {
-  display: none;
-}
-
-.ab-bio {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: none !important;
 }
 
 .minimal-section-label {
@@ -1163,7 +1157,7 @@ body.grad-active .minimal-list {
 
   .ab-bio-mobile {
     order: 3;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     gap: 1rem;
   }
