@@ -172,6 +172,8 @@ body.minimal {
   align-items: flex-start;
   justify-content: center;
   position: relative;
+  overflow-y: auto;
+  max-height: calc(100vh - 7rem - 3rem);
 }
 
 .minimal-preview-img {
