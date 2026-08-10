@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="minimal">
+<body class="minimal ab-active">
 
   <nav class="nav-minimal">
     <ul class="nav-minimal-tabs">
@@ -147,6 +147,7 @@
         defaultContent.classList.toggle('hidden', section !== 'ab');
         portraitureGrid.classList.toggle('hidden', section !== 'portraiture');
         graduationGrid.classList.toggle('hidden', section !== 'graduation');
+        document.body.classList.toggle('ab-active', section === 'ab');
         document.body.classList.toggle('grad-active', section === 'graduation');
 
         if (section === 'graduation') setTimeout(layoutGradGrid, 50);

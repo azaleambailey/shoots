@@ -89,12 +89,16 @@ body.minimal {
 }
 
 .minimal-list {
-  flex: 0 0 clamp(260px, 40vw, 600px);
+  flex: 0 0 280px;
   display: flex;
   flex-direction: column;
   height: calc(100vh - 7rem - 3rem);
   overflow-y: auto;
   gap: 1.5rem;
+}
+
+body.ab-active .minimal-list {
+  flex-basis: clamp(260px, 40vw, 600px);
 }
 
 .ab-bio {
