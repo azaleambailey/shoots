@@ -89,7 +89,7 @@ body.minimal {
 }
 
 .minimal-list {
-  flex: 0 0 600px;
+  flex: 0 0 clamp(260px, 40vw, 600px);
   display: flex;
   flex-direction: column;
   height: calc(100vh - 7rem - 3rem);
