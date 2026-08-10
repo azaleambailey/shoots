@@ -295,12 +295,14 @@ body.grad-active .minimal-list {
 /* Isis — left panel, natural size */
 .port-main {
   display: block;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .port-main img {
   display: block;
   max-height: 49vh;
+  max-width: 100%;
   width: auto;
   height: auto;
   transition: opacity 0.2s ease;
@@ -313,7 +315,8 @@ body.grad-active .minimal-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .port-row {
@@ -339,12 +342,14 @@ body.grad-active .minimal-list {
 /* Each photo at natural proportions, roughly half of Isis height */
 .port-item {
   display: block;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .port-item img {
   display: block;
   max-height: 32vh;
+  max-width: 100%;
   width: auto;
   height: auto;
   transition: opacity 0.2s ease;
@@ -1075,6 +1080,28 @@ body.grad-active .minimal-list {
   .photo-slot.wide {
     grid-column: span 1;
     grid-row: span 1;
+  }
+}
+
+/* ── Medium screens: portraiture grid switches to width-based ── */
+
+@media (max-width: 1100px) {
+  .port-item {
+    flex: 1;
+  }
+
+  .port-item img,
+  .port-row:first-child .port-item:first-child img,
+  .port-row:first-child .port-item:last-child img,
+  .port-row:last-child .port-item:first-child img,
+  .port-row:last-child .port-item:last-child img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  .port-main img {
+    max-height: 45vh;
   }
 }
 
