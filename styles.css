@@ -73,6 +73,18 @@ body.minimal {
   color: var(--text);
   text-decoration: none;
   transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: currentColor;
 }
 
 .nav-tab:not(.active) {
