@@ -111,12 +111,15 @@ body.ab-active .minimal-list {
 }
 
 .ab-contact {
-  order: 2;
-  margin-top: auto !important;
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  z-index: 99;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1.5rem;
+  margin-top: 0 !important;
   padding-top: 0;
   border-top: none;
 }
@@ -1302,9 +1305,9 @@ body.grad-active .minimal-list {
 
   /* Reset desktop contact styles on mobile */
   .ab-contact {
+    position: static;
     border-top: none;
     padding-top: 0;
-    order: unset;
     flex-direction: column;
     gap: 0;
   }
