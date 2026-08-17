@@ -65,7 +65,7 @@ body.minimal {
 }
 
 .nav-tab {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text);
@@ -124,7 +124,7 @@ body.ab-active .minimal-list {
 }
 
 .minimal-name-list li a {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -155,7 +155,7 @@ body.ab-active .minimal-list {
 }
 
 .minimal-bio {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text);
@@ -249,7 +249,7 @@ body.ab-active .minimal-list {
 }
 
 .grad-text {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-muted);
@@ -371,7 +371,7 @@ body.grad-active .minimal-list {
 }
 
 .muted-link {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.95rem;
   color: var(--text-muted);
   text-decoration: none;
@@ -730,7 +730,7 @@ body.grad-active .minimal-list {
 }
 
 .subject-name {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text);
@@ -739,7 +739,7 @@ body.grad-active .minimal-list {
 }
 
 .subject-caption {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-muted);
@@ -812,7 +812,7 @@ body.grad-active .minimal-list {
 }
 
 .dara-intro-text {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-muted);
@@ -872,7 +872,7 @@ body.grad-active .minimal-list {
 .dara-p3-text {
   flex: 0 0 200px;
   padding-top: 2rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Special Elite', 'Courier New', monospace;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-muted);
