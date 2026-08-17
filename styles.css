@@ -1133,6 +1133,28 @@ body.grad-active .minimal-list {
   }
 }
 
+/* ── Desktop bio tab: full-height cover photo ── */
+
+@media (min-width: 769px) {
+  body.ab-active .minimal-preview-area {
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  body.ab-active .minimal-default {
+    max-width: none;
+    height: 100%;
+  }
+
+  body.ab-active .bio-header-photo {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 /* ── Medium screens: portraiture grid switches to width-based ── */
 
 @media (max-width: 1100px) {
