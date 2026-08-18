@@ -621,6 +621,14 @@ body.subject-page .nav-minimal {
   position: relative;
 }
 
+body.subject-page .ab-contact {
+  position: static;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 0 3rem 1.5rem;
+  margin-top: 0;
+}
+
 body.subject-page .gallery-section {
   padding-top: 2rem;
 }
@@ -898,7 +906,7 @@ body.subject-page .gallery-section {
   font-weight: 300;
   color: var(--text);
   line-height: 1.7;
-  max-width: 240px;
+  max-width: 320px;
 }
 
 .dara-col {
