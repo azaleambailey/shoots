@@ -1214,42 +1214,40 @@ body.subject-page .gallery-section {
   }
 }
 
-/* ── Dara: medium screens — text above, photos in swipeable strip ── */
+/* ── Dara: medium screens — proportional photo scaling ── */
 
 @media (min-width: 769px) and (max-width: 1350px) {
-  /* P1: stack text above a horizontal scroll strip */
+  /* P1: text col shrinks, photo strip scales down proportionally */
   .dara-grid {
-    flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: flex-start;
   }
 
   .dara-text-col {
-    flex: none;
-    padding-top: 0;
+    flex: 0 0 clamp(180px, 22%, 260px);
+    padding-top: 1.5rem;
     padding-right: 0;
-    max-width: 480px;
+    min-width: 0;
   }
 
   .dara-photo-strip {
-    width: 100%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 1.5rem;
-  }
-
-  .dara-photo-strip::-webkit-scrollbar {
-    display: none;
-  }
-
-  .dara-col {
-    flex: 0 0 78% !important;
-    width: auto !important;
-    scroll-snap-align: start;
+    flex: 1;
     min-width: 0;
+  }
+
+  /* Maintain original 340:510 (2:3) ratio between columns */
+  .dara-col:nth-child(1) {
+    flex: 2 !important;
+    width: auto !important;
     margin-top: 0 !important;
+    min-width: 0;
+  }
+
+  .dara-col:nth-child(2) {
+    flex: 3 !important;
+    width: auto !important;
+    margin-top: 0 !important;
+    min-width: 0;
   }
 
   .dara-col .dara-photo {
