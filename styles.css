@@ -1216,7 +1216,7 @@ body.subject-page .gallery-section {
 
 /* ── Dara: medium screens — proportional photo scaling ── */
 
-@media (min-width: 769px) and (max-width: 1350px) {
+@media (min-width: 769px) and (max-width: 1700px) {
   /* P1: text col shrinks, photo strip scales down proportionally */
   .dara-grid {
     gap: 1.5rem;
@@ -1239,7 +1239,8 @@ body.subject-page .gallery-section {
   .dara-col:nth-child(1) {
     flex: 2 !important;
     width: auto !important;
-    margin-top: 0 !important;
+    /* Scale margin-top proportionally with strip width (130/860 ≈ 15%) */
+    margin-top: 15% !important;
     min-width: 0;
   }
 
@@ -1250,7 +1251,18 @@ body.subject-page .gallery-section {
     min-width: 0;
   }
 
-  .dara-col .dara-photo {
+  /* Col 1 portrait fills its column */
+  .dara-col:nth-child(1) .dara-photo {
+    width: 100% !important;
+  }
+
+  /* Col 2 portrait: maintain original 348/510 ≈ 68% ratio within col */
+  .dara-col:nth-child(2) .dara-photo:first-child {
+    width: 68% !important;
+  }
+
+  /* Col 2 landscape: fill full column width */
+  .dara-col:nth-child(2) .dara-photo:last-child {
     width: 100% !important;
   }
 
@@ -1524,6 +1536,7 @@ body.subject-page .gallery-section {
     display: block;
     width: 100%;
     height: auto;
+    overflow: visible;
   }
 
   .port-main img {
@@ -1533,18 +1546,28 @@ body.subject-page .gallery-section {
     display: block;
   }
 
+  /* Explicit column flex instead of display:contents — avoids iOS Safari bugs */
   .port-grid-right {
-    display: contents;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
   }
 
   .port-row {
-    display: contents;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
   }
 
   .port-item {
     display: block;
     width: 100%;
     height: auto;
+    overflow: visible;
+    flex: none;
+    align-self: stretch;
   }
 
   /* All portrait photos: natural dimensions, no cropping */
