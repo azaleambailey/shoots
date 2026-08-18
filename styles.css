@@ -1431,6 +1431,13 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
     display: block;
   }
 
+  /* Landscape photos: natural 3:2 ratio instead of full viewport height */
+  .port-main.port-landscape,
+  .port-item.port-landscape {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
   /* Name overlays: hidden by default, revealed on scroll */
   .portraiture-grid .photo-overlay {
     opacity: 0;
