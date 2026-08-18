@@ -1439,11 +1439,26 @@ body.subject-page .gallery-section {
     display: block;
   }
 
-  /* Landscape photos: natural 3:2 ratio instead of full viewport height */
-  .port-main.port-landscape,
+  /* Portrait items must not shrink below their stated viewport height */
+  .port-main,
+  .port-item:not(.port-landscape) {
+    flex-shrink: 0;
+  }
+
+  /* Landscape photos: natural proportions, no cropping */
   .port-item.port-landscape {
     height: auto;
-    aspect-ratio: 3 / 2;
+    flex-shrink: 0;
+  }
+
+  /* Override the high-specificity height:100% rules for landscape imgs */
+  .port-item.port-landscape img,
+  .port-row:first-child .port-item.port-landscape:last-child img,
+  .port-row:last-child .port-item.port-landscape:first-child img,
+  .port-row:last-child .port-item.port-landscape:last-child img {
+    height: auto;
+    width: 100%;
+    object-fit: fill;
   }
 
   /* Name overlays: hidden by default, revealed on scroll */
