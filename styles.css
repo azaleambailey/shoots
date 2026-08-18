@@ -622,7 +622,7 @@ body.subject-page .nav-minimal {
 }
 
 body.subject-page .ab-contact {
-  position: static;
+  position: static !important;
   flex-direction: row;
   gap: 1.5rem;
   padding: 0 3rem 1.5rem;
