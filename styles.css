@@ -339,7 +339,8 @@ body.grad-active .minimal-preview-area {
   align-items: flex-start;
 }
 
-body.grad-active .minimal-list {
+body.grad-active .minimal-list,
+body:not(.ab-active):not(.grad-active) .minimal-list {
   display: none;
 }
 
