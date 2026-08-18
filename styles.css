@@ -617,6 +617,14 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
   border-bottom: 1px solid var(--border);
 }
 
+body.subject-page .nav-minimal {
+  position: relative;
+}
+
+body.subject-page .gallery-section {
+  padding-top: 2rem;
+}
+
 .gallery-section.alt-bg {
   background-color: #f5f3f0;
 }
