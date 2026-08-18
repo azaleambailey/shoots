@@ -871,8 +871,16 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
 
 .dara-text-col {
   flex: 1;
-  padding-top: 160px;
+  padding-top: 130px;
   padding-right: 2rem;
+}
+
+.dara-p2-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  width: 485px;
 }
 
 .dara-intro-text {
@@ -1279,6 +1287,14 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
     border-bottom: 1px solid var(--border);
   }
 
+  .ab-bio-mobile.hidden-section {
+    display: none !important;
+  }
+
+  body:not(.ab-active) .ab-contact {
+    display: none;
+  }
+
   /* Bio tab: photo → bio → links */
   body.ab-active .minimal-preview-area {
     order: 1;
@@ -1362,24 +1378,26 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
     text-transform: none;
   }
 
-  /* ── Portraiture: full-bleed stacked photos ── */
+  /* ── Portraiture: full-page stacked photos ── */
   .portraiture-grid {
     flex-direction: column;
     align-items: stretch;
     padding-left: 0;
-    gap: 3px;
+    gap: 0;
   }
 
   .port-main {
     display: block;
     width: 100%;
+    height: 100vh;
+    height: 100svh;
     overflow: hidden;
   }
 
   .port-main img {
     max-height: none;
     width: 100%;
-    height: 62vw;
+    height: 100%;
     object-fit: cover;
     display: block;
   }
@@ -1395,6 +1413,8 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
   .port-item {
     display: block;
     width: 100%;
+    height: 100vh;
+    height: 100svh;
     overflow: hidden;
   }
 
@@ -1405,18 +1425,23 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
   .port-row:last-child .port-item:last-child img {
     max-height: none;
     width: 100%;
-    height: 62vw;
+    height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  /* Always-visible name overlays on mobile */
+  /* Name overlays: hidden by default, revealed on scroll */
   .portraiture-grid .photo-overlay {
-    opacity: 1;
-    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 52%);
+    opacity: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 45%);
     align-items: flex-end;
     justify-content: flex-start;
     padding: 0 1.25rem 1.25rem;
+    transition: opacity 0.5s ease;
+  }
+
+  .portraiture-grid .photo-overlay.scroll-visible {
+    opacity: 1;
   }
 
   .portraiture-grid .photo-overlay span {
@@ -1534,6 +1559,14 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
     flex: none;
     padding-top: 0;
     padding-right: 0;
+  }
+
+  .dara-p2-left-col {
+    width: 100%;
+  }
+
+  .dara-p2-left-col .dara-intro-text {
+    max-width: none;
   }
 
   .dara-p3-text {

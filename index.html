@@ -148,6 +148,25 @@
     }
     window.addEventListener('resize', layoutGradGrid);
 
+    // Mobile: reveal portrait name overlay briefly as each photo scrolls into view
+    const mq = window.matchMedia('(max-width: 768px)');
+    let revealObs = null;
+    function initPortraitReveal() {
+      if (!mq.matches || revealObs) return;
+      revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const overlay = entry.target.querySelector('.photo-overlay');
+          if (!overlay) return;
+          if (entry.isIntersecting) {
+            overlay.classList.add('scroll-visible');
+            clearTimeout(overlay._t);
+            overlay._t = setTimeout(() => overlay.classList.remove('scroll-visible'), 2000);
+          }
+        });
+      }, { threshold: 0.5 });
+      document.querySelectorAll('.port-main, .port-item').forEach(el => revealObs.observe(el));
+    }
+
     tabs.forEach(tab => {
       tab.addEventListener('click', e => {
         e.preventDefault();
@@ -167,6 +186,7 @@
         document.body.classList.toggle('grad-active', section === 'graduation');
 
         if (section === 'graduation') setTimeout(layoutGradGrid, 50);
+        if (section === 'portraiture') initPortraitReveal();
       });
     });
   </script>
