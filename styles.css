@@ -622,6 +622,10 @@ body.subject-page .nav-minimal {
 }
 
 body.subject-page .ab-contact {
+  position: fixed !important;
+  top: 2rem;
+  right: 3rem;
+  left: auto;
   transition: opacity 0.4s ease;
 }
 
