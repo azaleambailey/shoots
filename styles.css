@@ -772,12 +772,12 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
 
 .photo-overlay span {
   color: #fff;
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: 0.02em;
-  text-transform: none;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   padding: 0 1.5rem;
 }
 
@@ -1420,12 +1420,12 @@ body:not(.ab-active):not(.grad-active) .minimal-list {
   }
 
   .portraiture-grid .photo-overlay span {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 300;
-    font-style: italic;
-    letter-spacing: 0.02em;
-    text-transform: none;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   /* ── Graduation tab ── */
