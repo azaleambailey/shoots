@@ -1499,16 +1499,13 @@ body.subject-page .gallery-section {
   .port-main {
     display: block;
     width: 100%;
-    height: 100vh;
-    height: 100svh;
-    overflow: hidden;
+    height: auto;
   }
 
   .port-main img {
-    max-height: none;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: none;
     display: block;
   }
 
@@ -1523,43 +1520,23 @@ body.subject-page .gallery-section {
   .port-item {
     display: block;
     width: 100%;
-    height: 100vh;
-    height: 100svh;
-    overflow: hidden;
+    height: auto;
   }
 
+  /* All portrait photos: natural dimensions, no cropping */
   .port-item img,
   .port-row:first-child .port-item:first-child img,
   .port-row:first-child .port-item:last-child img,
   .port-row:last-child .port-item:first-child img,
-  .port-row:last-child .port-item:last-child img {
-    max-height: none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* Portrait items must not shrink below their stated viewport height */
-  .port-main,
-  .port-item:not(.port-landscape) {
-    flex-shrink: 0;
-  }
-
-  /* Landscape photos: natural proportions, no cropping */
-  .port-item.port-landscape {
-    height: auto;
-    flex-shrink: 0;
-  }
-
-  /* Override the high-specificity height:100% rules for landscape imgs */
+  .port-row:last-child .port-item:last-child img,
   .port-item.port-landscape img,
   .port-row:first-child .port-item.port-landscape:last-child img,
   .port-row:last-child .port-item.port-landscape:first-child img,
   .port-row:last-child .port-item.port-landscape:last-child img {
-    height: auto;
     width: 100%;
-    object-fit: fill;
+    height: auto;
+    max-height: none;
+    display: block;
   }
 
   /* Name overlays: hidden by default, revealed on scroll */
