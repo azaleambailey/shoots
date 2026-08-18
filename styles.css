@@ -920,6 +920,13 @@ body.subject-page .gallery-section {
   gap: 10px;
 }
 
+.dara-photo-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .dara-photo img {
   width: 100%;
   height: 100%;
@@ -1207,23 +1214,40 @@ body.subject-page .gallery-section {
   }
 }
 
-/* ── Dara: medium screens — text pinned left, photo cols flex equal ── */
+/* ── Dara: medium screens — text above, photos in swipeable strip ── */
 
 @media (min-width: 769px) and (max-width: 1350px) {
+  /* P1: stack text above a horizontal scroll strip */
   .dara-grid {
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 2rem;
     align-items: flex-start;
   }
 
   .dara-text-col {
-    flex: 0 0 240px;
-    padding-top: 1.5rem;
+    flex: none;
+    padding-top: 0;
     padding-right: 0;
+    max-width: 480px;
+  }
+
+  .dara-photo-strip {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1.5rem;
+  }
+
+  .dara-photo-strip::-webkit-scrollbar {
+    display: none;
   }
 
   .dara-col {
-    flex: 1 !important;
+    flex: 0 0 78% !important;
     width: auto !important;
+    scroll-snap-align: start;
     min-width: 0;
     margin-top: 0 !important;
   }
@@ -1681,6 +1705,12 @@ body.subject-page .gallery-section {
   .dara-p3-text {
     flex: none;
     padding-top: 0;
+  }
+
+  .dara-photo-strip {
+    flex-direction: column;
+    width: 100%;
+    overflow-x: visible;
   }
 
   .dara-col {
