@@ -622,11 +622,12 @@ body.subject-page .nav-minimal {
 }
 
 body.subject-page .ab-contact {
-  position: static !important;
-  flex-direction: row;
-  gap: 1.5rem;
-  padding: 0 3rem 1.5rem;
-  margin-top: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.subject-page .ab-contact.scrolled {
+  opacity: 0;
+  pointer-events: none;
 }
 
 body.subject-page .gallery-section {
@@ -1355,8 +1356,9 @@ body.subject-page .gallery-section {
 
   .minimal-main {
     flex-direction: column;
-    padding: 52px 0 4rem;
+    padding: 52px 0 0;
     gap: 0;
+    min-height: auto;
   }
 
   /* Default tab order: names → photo */
@@ -1409,7 +1411,8 @@ body.subject-page .gallery-section {
 
   body.ab-active .minimal-list {
     order: 3;
-    padding: 0 1.5rem 3rem;
+    padding: 0;
+    flex: none;
   }
 
   /* Header photo: full bleed, tall, cover */

@@ -42,5 +42,11 @@
       </div>
     </div>
   </section>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('.ab-contact')?.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
 </body>
 </html>

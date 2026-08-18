@@ -126,6 +126,10 @@
   document.querySelectorAll('.dara-p3-section img[data-folder]').forEach(img => {
     scheduleSwap(img, img.dataset.folder);
   });
+
+  window.addEventListener('scroll', () => {
+    document.querySelector('.ab-contact')?.classList.toggle('scrolled', window.scrollY > 50);
+  });
 </script>
 </body>
 </html>

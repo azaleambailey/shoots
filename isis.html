@@ -35,5 +35,11 @@
     </div>
     <p class="subject-caption" style="margin-top: 1.5rem;">placeholder text — fill this in later</p>
   </section>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelector('.ab-contact')?.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
 </body>
 </html>
