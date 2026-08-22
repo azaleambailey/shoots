@@ -102,7 +102,7 @@
             <div class="grad-item"><img src="photos/grad/DSC_0381 copy-2.jpg" alt="Graduation" /></div>
           </div>
           <div class="grad-item"><img src="photos/grad/DSC_0633-2.jpg" alt="Graduation" /></div>
-          <div class="grad-right-row">
+          <div class="grad-right-row" id="grad-bottom-row">
             <div class="grad-item"><img src="photos/grad/282CD124-4BE9-4D09-8C06-ED0882819A76.jpg" alt="Graduation" /></div>
             <div class="grad-item"><img src="photos/grad/DSC_0110.jpg" alt="Graduation" /></div>
           </div>
@@ -143,33 +143,43 @@
         // left col starts below landscape; right section starts 45% down the landscape
         document.getElementById('grad-col-left').style.marginTop = (lh + gap) + 'px';
         document.getElementById('grad-col-r1').style.marginTop = Math.round(lh * 0.45) + 'px';
-        requestAnimationFrame(alignGrad0482);
+        requestAnimationFrame(alignGradPairs);
       });
     }
 
-    // Keep the DSC_0482 photo's bottom edge flush with DSC_0085-2 next to it,
-    // at any viewport width. Both are portrait photos, so a small height
-    // adjustment via object-fit: cover never crops meaningfully.
-    function alignGrad0482() {
-      const target = document.getElementById('grad-0482-item');
-      const neighbor = document.getElementById('grad-0085-item');
-      if (!target || !neighbor) return;
-      const img = target.querySelector('img');
-      if (!img || !img.complete || !img.naturalWidth) return;
+    // Keep specific photos' bottom edges flush with a neighbor next to them,
+    // at any viewport width. All photos involved are portrait, so a small
+    // height adjustment via object-fit: cover never crops meaningfully.
+    const gradAlignPairs = [
+      { targetId: 'grad-0482-item', neighborId: 'grad-0085-item' },
+      { targetId: 'grad-bottom-row', neighborId: 'grad-0085-item' },
+    ];
 
-      target.style.height = '';
-      img.style.height = '';
-      img.style.objectFit = '';
+    function alignGradPairs() {
+      gradAlignPairs.forEach(({ targetId, neighborId }) => {
+        const target = document.getElementById(targetId);
+        const neighbor = document.getElementById(neighborId);
+        if (!target || !neighbor) return;
+        const items = target.classList.contains('grad-right-row')
+          ? Array.from(target.querySelectorAll('.grad-item'))
+          : [target];
+        const imgs = items.map(item => item.querySelector('img'));
+        if (imgs.some(img => !img || !img.complete || !img.naturalWidth)) return;
 
-      requestAnimationFrame(() => {
-        const targetTop = target.getBoundingClientRect().top;
-        const neighborBottom = neighbor.getBoundingClientRect().bottom;
-        const h = neighborBottom - targetTop;
-        if (h > 0) {
-          target.style.height = h + 'px';
-          img.style.height = '100%';
-          img.style.objectFit = 'cover';
-        }
+        target.style.height = '';
+        items.forEach(item => { item.style.height = ''; });
+        imgs.forEach(img => { img.style.height = ''; img.style.objectFit = ''; });
+
+        requestAnimationFrame(() => {
+          const targetTop = target.getBoundingClientRect().top;
+          const neighborBottom = neighbor.getBoundingClientRect().bottom;
+          const h = neighborBottom - targetTop;
+          if (h > 0) {
+            target.style.height = h + 'px';
+            items.forEach(item => { if (item !== target) item.style.height = '100%'; });
+            imgs.forEach(img => { img.style.height = '100%'; img.style.objectFit = 'cover'; });
+          }
+        });
       });
     }
 
@@ -178,10 +188,8 @@
       heroImg.addEventListener('load', layoutGradGrid);
       if (heroImg.complete && heroImg.naturalHeight) layoutGradGrid();
     }
-    const grad0482Img = document.querySelector('#grad-0482-item img');
-    const grad0085Img = document.querySelector('#grad-0085-item img');
-    if (grad0482Img) grad0482Img.addEventListener('load', alignGrad0482);
-    if (grad0085Img) grad0085Img.addEventListener('load', alignGrad0482);
+    document.querySelectorAll('#grad-0482-item img, #grad-0085-item img, #grad-bottom-row img')
+      .forEach(img => img.addEventListener('load', alignGradPairs));
     window.addEventListener('resize', layoutGradGrid);
 
     // Mobile: reveal portrait name overlay briefly as each photo scrolls into view
