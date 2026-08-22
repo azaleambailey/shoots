@@ -313,6 +313,10 @@ body.ab-active .minimal-list {
   line-height: 1.7;
 }
 
+.grad-item {
+  overflow: hidden;
+}
+
 .grad-item img {
   width: 100%;
   height: auto;

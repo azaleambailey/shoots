@@ -143,6 +143,73 @@
         // left col starts below landscape; right section starts 45% down the landscape
         document.getElementById('grad-col-left').style.marginTop = (lh + gap) + 'px';
         document.getElementById('grad-col-r1').style.marginTop = Math.round(lh * 0.45) + 'px';
+        requestAnimationFrame(balanceGradColumns);
+      });
+    }
+
+    // Scale every photo in the shorter columns (uniformly, per column) so all
+    // three columns' bottom edges land flush with the tallest column.
+    function balanceGradColumns() {
+      const grid = document.getElementById('graduation-default');
+      const lgCol = document.querySelector('.grad-col-lg');
+      const leftCol = document.getElementById('grad-col-left');
+      const r1Col = document.getElementById('grad-col-r1');
+      if (!grid || grid.classList.contains('hidden') || !lgCol || !leftCol || !r1Col) return;
+
+      const cols = [leftCol, lgCol, r1Col];
+
+      // Reset prior scaling so measurements reflect each photo's natural size.
+      cols.forEach(col => {
+        col.querySelectorAll('.grad-item').forEach(item => {
+          item.style.height = '';
+          const img = item.querySelector('img');
+          if (img) { img.style.height = ''; img.style.objectFit = ''; }
+        });
+      });
+
+      const imgs = Array.from(grid.querySelectorAll('img'));
+      const pending = imgs.filter(img => !img.complete || !img.naturalWidth);
+      if (pending.length) {
+        let remaining = pending.length;
+        pending.forEach(img => {
+          img.addEventListener('load', () => {
+            remaining--;
+            if (remaining <= 0) balanceGradColumns();
+          }, { once: true });
+        });
+        return;
+      }
+
+      requestAnimationFrame(() => {
+        const target = Math.max(...cols.map(col => col.getBoundingClientRect().bottom));
+
+        cols.forEach(col => {
+          const rect = col.getBoundingClientRect();
+          const units = Array.from(col.children).filter(el =>
+            el.classList.contains('grad-item') || el.classList.contains('grad-right-row')
+          );
+          if (!units.length) return;
+
+          const currentUnitsHeight = units.reduce((sum, u) => sum + u.getBoundingClientRect().height, 0);
+          if (currentUnitsHeight <= 0) return;
+
+          const fixed = rect.height - currentUnitsHeight; // gaps + caption text, unscaled
+          const neededUnitsHeight = (target - rect.top) - fixed;
+          const scale = neededUnitsHeight / currentUnitsHeight;
+          if (!isFinite(scale) || scale <= 0 || Math.abs(scale - 1) < 0.002) return;
+
+          units.forEach(unit => {
+            const h = unit.getBoundingClientRect().height * scale;
+            const items = unit.classList.contains('grad-right-row')
+              ? unit.querySelectorAll('.grad-item')
+              : [unit];
+            items.forEach(item => {
+              item.style.height = h + 'px';
+              const img = item.querySelector('img');
+              if (img) { img.style.height = '100%'; img.style.objectFit = 'cover'; }
+            });
+          });
+        });
       });
     }
 
