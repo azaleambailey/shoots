@@ -183,6 +183,12 @@
       requestAnimationFrame(() => {
         const target = Math.max(...cols.map(col => col.getBoundingClientRect().bottom));
 
+        // A unit is scalable only if every image in it is portrait-oriented.
+        // Landscape photos (the hero included) stay at their natural size —
+        // stretching them to match a taller column crops their width badly.
+        const isLandscape = img => img.naturalWidth > img.naturalHeight;
+        const unitIsScalable = unit => !Array.from(unit.querySelectorAll('img')).some(isLandscape);
+
         cols.forEach(col => {
           const rect = col.getBoundingClientRect();
           const units = Array.from(col.children).filter(el =>
@@ -190,15 +196,20 @@
           );
           if (!units.length) return;
 
-          const currentUnitsHeight = units.reduce((sum, u) => sum + u.getBoundingClientRect().height, 0);
-          if (currentUnitsHeight <= 0) return;
+          const scalableUnits = units.filter(unitIsScalable);
+          const fixedUnitsHeight = units
+            .filter(u => !unitIsScalable(u))
+            .reduce((sum, u) => sum + u.getBoundingClientRect().height, 0);
+          const currentScalableHeight = scalableUnits.reduce((sum, u) => sum + u.getBoundingClientRect().height, 0);
+          if (currentScalableHeight <= 0) return;
 
-          const fixed = rect.height - currentUnitsHeight; // gaps + caption text, unscaled
-          const neededUnitsHeight = (target - rect.top) - fixed;
-          const scale = neededUnitsHeight / currentUnitsHeight;
+          const nonScalable = rect.height - currentScalableHeight - fixedUnitsHeight;
+          const fixed = nonScalable + fixedUnitsHeight; // gaps + text + landscape photos, unscaled
+          const neededScalableHeight = (target - rect.top) - fixed;
+          const scale = neededScalableHeight / currentScalableHeight;
           if (!isFinite(scale) || scale <= 0 || Math.abs(scale - 1) < 0.002) return;
 
-          units.forEach(unit => {
+          scalableUnits.forEach(unit => {
             const h = unit.getBoundingClientRect().height * scale;
             const items = unit.classList.contains('grad-right-row')
               ? unit.querySelectorAll('.grad-item')
