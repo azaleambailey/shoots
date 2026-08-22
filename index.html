@@ -76,39 +76,35 @@
       </div>
 
       <!-- Graduation grid -->
-      <div class="hidden" id="graduation-default">
-        <div class="grad-hero-wrap">
-          <img id="grad-landscape-hero" src="photos/grad/DSC_0056-2.jpg" alt="Graduation" />
+      <div class="grad-grid hidden" id="graduation-default">
+        <div class="grad-col grad-col-sm" id="grad-col-left">
+          <div class="grad-item"><img src="photos/grad/DSC_0070-3.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0266-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0835-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0506.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0482.jpg" alt="Graduation" /></div>
         </div>
-        <div class="grad-grid">
-          <div class="grad-col grad-col-sm" id="grad-col-left">
-            <div class="grad-item"><img src="photos/grad/DSC_0070-3.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC_0266-2.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC_0835-2.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC_0506.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC_0482.jpg" alt="Graduation" /></div>
+        <div class="grad-col grad-col-lg">
+          <div class="grad-item"><img id="grad-landscape-hero" src="photos/grad/DSC_0056-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0381-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC2_0286-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0085-2.jpg" alt="Graduation" /></div>
+        </div>
+        <div class="grad-right-section" id="grad-col-r1">
+          <p class="grad-text">Graduation days carry something I can never quite put into words — equal parts relief, pride, and nostalgia for a place still being left. These are some of my favorite sessions to shoot.</p>
+          <div class="grad-right-row">
+            <div class="grad-item"><img src="photos/grad/DSC_0182-2.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC_0350-2.jpg" alt="Graduation" /></div>
           </div>
-          <div class="grad-col grad-col-lg">
-            <div class="grad-item"><img src="photos/grad/DSC_0381-2.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC2_0286-2.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC_0085-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item"><img src="photos/grad/DSC_0646.jpg" alt="Graduation" /></div>
+          <div class="grad-right-row">
+            <div class="grad-item"><img src="photos/grad/DSC_0223-2.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC_0381 copy-2.jpg" alt="Graduation" /></div>
           </div>
-          <div class="grad-right-section" id="grad-col-r1">
-            <p class="grad-text">Graduation days carry something I can never quite put into words — equal parts relief, pride, and nostalgia for a place still being left. These are some of my favorite sessions to shoot.</p>
-            <div class="grad-right-row">
-              <div class="grad-item"><img src="photos/grad/DSC_0182-2.jpg" alt="Graduation" /></div>
-              <div class="grad-item"><img src="photos/grad/DSC_0350-2.jpg" alt="Graduation" /></div>
-            </div>
-            <div class="grad-item"><img src="photos/grad/DSC_0646.jpg" alt="Graduation" /></div>
-            <div class="grad-right-row">
-              <div class="grad-item"><img src="photos/grad/DSC_0223-2.jpg" alt="Graduation" /></div>
-              <div class="grad-item"><img src="photos/grad/DSC_0381 copy-2.jpg" alt="Graduation" /></div>
-            </div>
-            <div class="grad-item"><img src="photos/grad/DSC_0633-2.jpg" alt="Graduation" /></div>
-            <div class="grad-right-row">
-              <div class="grad-item"><img src="photos/grad/282CD124-4BE9-4D09-8C06-ED0882819A76.jpg" alt="Graduation" /></div>
-              <div class="grad-item"><img src="photos/grad/DSC_0110.jpg" alt="Graduation" /></div>
-            </div>
+          <div class="grad-item"><img src="photos/grad/DSC_0633-2.jpg" alt="Graduation" /></div>
+          <div class="grad-right-row">
+            <div class="grad-item"><img src="photos/grad/282CD124-4BE9-4D09-8C06-ED0882819A76.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC_0110.jpg" alt="Graduation" /></div>
           </div>
         </div>
       </div>
@@ -137,93 +133,25 @@
     const portraitureGrid = document.getElementById('portraiture-default');
     const graduationGrid = document.getElementById('graduation-default');
 
-    // Scale every photo in the shorter columns (uniformly, per column) so all
-    // three columns' bottom edges land flush with the tallest column.
-    function balanceGradColumns() {
-      const grid = document.getElementById('graduation-default');
-      const lgCol = document.querySelector('.grad-col-lg');
-      const leftCol = document.getElementById('grad-col-left');
-      const r1Col = document.getElementById('grad-col-r1');
-      if (!grid || grid.classList.contains('hidden') || !lgCol || !leftCol || !r1Col) return;
-
-      const cols = [leftCol, lgCol, r1Col];
-
-      // Reset prior scaling so measurements reflect each photo's natural size.
-      cols.forEach(col => {
-        col.querySelectorAll('.grad-item').forEach(item => {
-          item.style.height = '';
-          const img = item.querySelector('img');
-          if (img) { img.style.height = ''; img.style.objectFit = ''; }
-        });
-      });
-
-      const imgs = Array.from(grid.querySelectorAll('img'));
-      const pending = imgs.filter(img => !img.complete || !img.naturalWidth);
-      if (pending.length) {
-        let remaining = pending.length;
-        pending.forEach(img => {
-          img.addEventListener('load', () => {
-            remaining--;
-            if (remaining <= 0) balanceGradColumns();
-          }, { once: true });
-        });
-        return;
-      }
-
+    function layoutGradGrid() {
       requestAnimationFrame(() => {
-        const target = Math.max(...cols.map(col => col.getBoundingClientRect().bottom));
-
-        // A unit is scalable only if every image in it is portrait-oriented.
-        // Landscape photos (the hero included) stay at their natural size —
-        // stretching them to match a taller column crops their width badly.
-        const isLandscape = img => img.naturalWidth > img.naturalHeight;
-        const unitIsScalable = unit => !Array.from(unit.querySelectorAll('img')).some(isLandscape);
-
-        cols.forEach(col => {
-          const rect = col.getBoundingClientRect();
-          const units = Array.from(col.children).filter(el =>
-            el.classList.contains('grad-item') || el.classList.contains('grad-right-row')
-          );
-          if (!units.length) return;
-
-          const scalableUnits = units.filter(unitIsScalable);
-          const fixedUnitsHeight = units
-            .filter(u => !unitIsScalable(u))
-            .reduce((sum, u) => sum + u.getBoundingClientRect().height, 0);
-          const currentScalableHeight = scalableUnits.reduce((sum, u) => sum + u.getBoundingClientRect().height, 0);
-          if (currentScalableHeight <= 0) return;
-
-          const nonScalable = rect.height - currentScalableHeight - fixedUnitsHeight;
-          const fixed = nonScalable + fixedUnitsHeight; // gaps + text + landscape photos, unscaled
-          const neededScalableHeight = (target - rect.top) - fixed;
-          const scale = neededScalableHeight / currentScalableHeight;
-          if (!isFinite(scale) || scale <= 0 || Math.abs(scale - 1) < 0.002) return;
-
-          scalableUnits.forEach(unit => {
-            const h = unit.getBoundingClientRect().height * scale;
-            const items = unit.classList.contains('grad-right-row')
-              ? unit.querySelectorAll('.grad-item')
-              : [unit];
-            items.forEach(item => {
-              item.style.height = h + 'px';
-              const img = item.querySelector('img');
-              if (img) { img.style.height = '100%'; img.style.objectFit = 'cover'; }
-            });
-          });
-        });
+        const hero = document.getElementById('grad-landscape-hero');
+        if (!hero) return;
+        const lh = hero.offsetHeight;
+        if (lh === 0) return;
+        const gap = 10;
+        // left col starts below landscape; right section starts 45% down the landscape
+        document.getElementById('grad-col-left').style.marginTop = (lh + gap) + 'px';
+        document.getElementById('grad-col-r1').style.marginTop = Math.round(lh * 0.45) + 'px';
       });
-    }
-
-    function initGradGrid() {
-      requestAnimationFrame(balanceGradColumns);
     }
 
     const heroImg = document.getElementById('grad-landscape-hero');
     if (heroImg) {
-      heroImg.addEventListener('load', initGradGrid);
-      if (heroImg.complete && heroImg.naturalHeight) initGradGrid();
+      heroImg.addEventListener('load', layoutGradGrid);
+      if (heroImg.complete && heroImg.naturalHeight) layoutGradGrid();
     }
-    window.addEventListener('resize', initGradGrid);
+    window.addEventListener('resize', layoutGradGrid);
 
     // Mobile: reveal portrait name overlay briefly as each photo scrolls into view
     const mq = window.matchMedia('(max-width: 768px)');
@@ -262,7 +190,7 @@
         document.body.classList.toggle('ab-active', section === 'ab');
         document.body.classList.toggle('grad-active', section === 'graduation');
 
-        if (section === 'graduation') setTimeout(initGradGrid, 50);
+        if (section === 'graduation') setTimeout(layoutGradGrid, 50);
         if (section === 'portraiture') initPortraitReveal();
       });
     });

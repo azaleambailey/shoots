@@ -270,27 +270,14 @@ body.ab-active .minimal-list {
 
 /* ── Graduation Grid ── */
 
-#graduation-default.hidden { display: none; }
-
-.grad-hero-wrap {
-  width: 100%;
-  max-width: 1400px;
-  margin-bottom: 10px;
-}
-
-.grad-hero-wrap img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .grad-grid {
   display: flex;
   gap: 10px;
   align-items: flex-start;
   width: 100%;
-  max-width: 1400px;
 }
+
+.grad-grid.hidden { display: none; }
 
 .grad-col {
   display: flex;
@@ -326,14 +313,15 @@ body.ab-active .minimal-list {
   line-height: 1.7;
 }
 
-.grad-item {
-  overflow: hidden;
-}
-
 .grad-item img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+#grad-landscape-hero {
+  margin-left: calc(-20vw - 2rem);
+  width: calc(100% + 20vw + 2rem);
 }
 
 .grad-item-centered {
@@ -1631,6 +1619,16 @@ body.subject-page .gallery-section {
   .grad-right-section {
     flex: none;
     width: 100%;
+  }
+
+  #grad-col-left,
+  #grad-col-r1 {
+    margin-top: 0 !important;
+  }
+
+  #grad-landscape-hero {
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 
   /* ── Subject pages ── */
