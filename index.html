@@ -82,13 +82,13 @@
           <div class="grad-item"><img src="photos/grad/DSC_0266-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0835-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0506.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0482.jpg" alt="Graduation" /></div>
+          <div class="grad-item" id="grad-0482-item"><img src="photos/grad/DSC_0482.jpg" alt="Graduation" /></div>
         </div>
         <div class="grad-col grad-col-lg">
           <div class="grad-item"><img id="grad-landscape-hero" src="photos/grad/DSC_0056-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC_0381-2.jpg" alt="Graduation" /></div>
           <div class="grad-item"><img src="photos/grad/DSC2_0286-2.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0085-2.jpg" alt="Graduation" /></div>
+          <div class="grad-item" id="grad-0085-item"><img src="photos/grad/DSC_0085-2.jpg" alt="Graduation" /></div>
         </div>
         <div class="grad-right-section" id="grad-col-r1">
           <p class="grad-text">Graduation days carry something I can never quite put into words — equal parts relief, pride, and nostalgia for a place still being left. These are some of my favorite sessions to shoot.</p>
@@ -143,6 +143,33 @@
         // left col starts below landscape; right section starts 45% down the landscape
         document.getElementById('grad-col-left').style.marginTop = (lh + gap) + 'px';
         document.getElementById('grad-col-r1').style.marginTop = Math.round(lh * 0.45) + 'px';
+        requestAnimationFrame(alignGrad0482);
+      });
+    }
+
+    // Keep the DSC_0482 photo's bottom edge flush with DSC_0085-2 next to it,
+    // at any viewport width. Both are portrait photos, so a small height
+    // adjustment via object-fit: cover never crops meaningfully.
+    function alignGrad0482() {
+      const target = document.getElementById('grad-0482-item');
+      const neighbor = document.getElementById('grad-0085-item');
+      if (!target || !neighbor) return;
+      const img = target.querySelector('img');
+      if (!img || !img.complete || !img.naturalWidth) return;
+
+      target.style.height = '';
+      img.style.height = '';
+      img.style.objectFit = '';
+
+      requestAnimationFrame(() => {
+        const targetTop = target.getBoundingClientRect().top;
+        const neighborBottom = neighbor.getBoundingClientRect().bottom;
+        const h = neighborBottom - targetTop;
+        if (h > 0) {
+          target.style.height = h + 'px';
+          img.style.height = '100%';
+          img.style.objectFit = 'cover';
+        }
       });
     }
 
@@ -151,6 +178,10 @@
       heroImg.addEventListener('load', layoutGradGrid);
       if (heroImg.complete && heroImg.naturalHeight) layoutGradGrid();
     }
+    const grad0482Img = document.querySelector('#grad-0482-item img');
+    const grad0085Img = document.querySelector('#grad-0085-item img');
+    if (grad0482Img) grad0482Img.addEventListener('load', alignGrad0482);
+    if (grad0085Img) grad0085Img.addEventListener('load', alignGrad0482);
     window.addEventListener('resize', layoutGradGrid);
 
     // Mobile: reveal portrait name overlay briefly as each photo scrolls into view
