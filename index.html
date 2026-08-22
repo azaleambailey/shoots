@@ -137,7 +137,7 @@
       requestAnimationFrame(() => {
         const hero = document.getElementById('grad-landscape-hero');
         if (!hero) return;
-        const lh = hero.offsetHeight;
+        const lh = Math.min(hero.offsetHeight, 460);
         if (lh === 0) return;
         const gap = 10;
         // left col starts below landscape; right section starts 45% down the landscape
