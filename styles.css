@@ -275,6 +275,7 @@ body.ab-active .minimal-list {
   gap: 10px;
   align-items: flex-start;
   width: 100%;
+  max-width: 1400px;
 }
 
 .grad-grid.hidden { display: none; }
@@ -324,8 +325,8 @@ body.ab-active .minimal-list {
 }
 
 #grad-landscape-hero {
-  margin-left: calc(-20vw - 2rem);
-  width: calc(100% + 20vw + 2rem);
+  margin-left: calc(-1 * min(20vw, 260px) - 2rem);
+  width: calc(100% + min(20vw, 260px) + 2rem);
 }
 
 .grad-item-centered {
