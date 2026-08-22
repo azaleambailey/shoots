@@ -76,35 +76,39 @@
       </div>
 
       <!-- Graduation grid -->
-      <div class="grad-grid hidden" id="graduation-default">
-        <div class="grad-col grad-col-sm" id="grad-col-left">
-          <div class="grad-item"><img src="photos/grad/DSC_0070-3.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0266-2.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0835-2.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0506.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0482.jpg" alt="Graduation" /></div>
+      <div class="hidden" id="graduation-default">
+        <div class="grad-hero-wrap">
+          <img id="grad-landscape-hero" src="photos/grad/DSC_0056-2.jpg" alt="Graduation" />
         </div>
-        <div class="grad-col grad-col-lg">
-          <div class="grad-item"><img id="grad-landscape-hero" src="photos/grad/DSC_0056-2.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0381-2.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC2_0286-2.jpg" alt="Graduation" /></div>
-          <div class="grad-item"><img src="photos/grad/DSC_0085-2.jpg" alt="Graduation" /></div>
-        </div>
-        <div class="grad-right-section" id="grad-col-r1">
-          <p class="grad-text">Graduation days carry something I can never quite put into words — equal parts relief, pride, and nostalgia for a place still being left. These are some of my favorite sessions to shoot.</p>
-          <div class="grad-right-row">
-            <div class="grad-item"><img src="photos/grad/DSC_0182-2.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC_0350-2.jpg" alt="Graduation" /></div>
+        <div class="grad-grid">
+          <div class="grad-col grad-col-sm" id="grad-col-left">
+            <div class="grad-item"><img src="photos/grad/DSC_0070-3.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC_0266-2.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC_0835-2.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC_0506.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC_0482.jpg" alt="Graduation" /></div>
           </div>
-          <div class="grad-item"><img src="photos/grad/DSC_0646.jpg" alt="Graduation" /></div>
-          <div class="grad-right-row">
-            <div class="grad-item"><img src="photos/grad/DSC_0223-2.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC_0381 copy-2.jpg" alt="Graduation" /></div>
+          <div class="grad-col grad-col-lg">
+            <div class="grad-item"><img src="photos/grad/DSC_0381-2.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC2_0286-2.jpg" alt="Graduation" /></div>
+            <div class="grad-item"><img src="photos/grad/DSC_0085-2.jpg" alt="Graduation" /></div>
           </div>
-          <div class="grad-item"><img src="photos/grad/DSC_0633-2.jpg" alt="Graduation" /></div>
-          <div class="grad-right-row">
-            <div class="grad-item"><img src="photos/grad/282CD124-4BE9-4D09-8C06-ED0882819A76.jpg" alt="Graduation" /></div>
-            <div class="grad-item"><img src="photos/grad/DSC_0110.jpg" alt="Graduation" /></div>
+          <div class="grad-right-section" id="grad-col-r1">
+            <p class="grad-text">Graduation days carry something I can never quite put into words — equal parts relief, pride, and nostalgia for a place still being left. These are some of my favorite sessions to shoot.</p>
+            <div class="grad-right-row">
+              <div class="grad-item"><img src="photos/grad/DSC_0182-2.jpg" alt="Graduation" /></div>
+              <div class="grad-item"><img src="photos/grad/DSC_0350-2.jpg" alt="Graduation" /></div>
+            </div>
+            <div class="grad-item"><img src="photos/grad/DSC_0646.jpg" alt="Graduation" /></div>
+            <div class="grad-right-row">
+              <div class="grad-item"><img src="photos/grad/DSC_0223-2.jpg" alt="Graduation" /></div>
+              <div class="grad-item"><img src="photos/grad/DSC_0381 copy-2.jpg" alt="Graduation" /></div>
+            </div>
+            <div class="grad-item"><img src="photos/grad/DSC_0633-2.jpg" alt="Graduation" /></div>
+            <div class="grad-right-row">
+              <div class="grad-item"><img src="photos/grad/282CD124-4BE9-4D09-8C06-ED0882819A76.jpg" alt="Graduation" /></div>
+              <div class="grad-item"><img src="photos/grad/DSC_0110.jpg" alt="Graduation" /></div>
+            </div>
           </div>
         </div>
       </div>
@@ -132,20 +136,6 @@
     const defaultContent = document.getElementById('site-default');
     const portraitureGrid = document.getElementById('portraiture-default');
     const graduationGrid = document.getElementById('graduation-default');
-
-    function layoutGradGrid() {
-      requestAnimationFrame(() => {
-        const hero = document.getElementById('grad-landscape-hero');
-        if (!hero) return;
-        const lh = Math.min(hero.offsetHeight, 460);
-        if (lh === 0) return;
-        const gap = 10;
-        // left col starts below landscape; right section starts 45% down the landscape
-        document.getElementById('grad-col-left').style.marginTop = (lh + gap) + 'px';
-        document.getElementById('grad-col-r1').style.marginTop = Math.round(lh * 0.45) + 'px';
-        requestAnimationFrame(balanceGradColumns);
-      });
-    }
 
     // Scale every photo in the shorter columns (uniformly, per column) so all
     // three columns' bottom edges land flush with the tallest column.
@@ -224,12 +214,16 @@
       });
     }
 
+    function initGradGrid() {
+      requestAnimationFrame(balanceGradColumns);
+    }
+
     const heroImg = document.getElementById('grad-landscape-hero');
     if (heroImg) {
-      heroImg.addEventListener('load', layoutGradGrid);
-      if (heroImg.complete && heroImg.naturalHeight) layoutGradGrid();
+      heroImg.addEventListener('load', initGradGrid);
+      if (heroImg.complete && heroImg.naturalHeight) initGradGrid();
     }
-    window.addEventListener('resize', layoutGradGrid);
+    window.addEventListener('resize', initGradGrid);
 
     // Mobile: reveal portrait name overlay briefly as each photo scrolls into view
     const mq = window.matchMedia('(max-width: 768px)');
@@ -268,7 +262,7 @@
         document.body.classList.toggle('ab-active', section === 'ab');
         document.body.classList.toggle('grad-active', section === 'graduation');
 
-        if (section === 'graduation') setTimeout(layoutGradGrid, 50);
+        if (section === 'graduation') setTimeout(initGradGrid, 50);
         if (section === 'portraiture') initPortraitReveal();
       });
     });
