@@ -920,6 +920,16 @@ body.subject-page .gallery-section {
   max-width: 320px;
 }
 
+.dara-intro-text a {
+  color: var(--text);
+  text-underline-offset: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.dara-intro-text a:hover {
+  opacity: 0.6;
+}
+
 .dara-col {
   display: flex;
   flex-direction: column;
