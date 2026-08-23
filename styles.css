@@ -217,6 +217,16 @@ body.ab-active .minimal-list {
   line-height: 1.85;
 }
 
+.minimal-bio a {
+  color: var(--text);
+  text-underline-offset: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.minimal-bio a:hover {
+  opacity: 0.6;
+}
+
 
 .bio-header-photo {
   max-height: 72vh;
