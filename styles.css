@@ -905,14 +905,6 @@ body.subject-page .gallery-section {
   padding-right: 2rem;
 }
 
-.dara-p2-left-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  flex-shrink: 0;
-  width: 485px;
-}
-
 .dara-intro-text {
   font-family: var(--font-display);
   font-size: 0.95rem;
@@ -936,13 +928,6 @@ body.subject-page .gallery-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.dara-photo-strip {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  flex-shrink: 0;
 }
 
 .dara-photo img {
@@ -1248,13 +1233,8 @@ body.subject-page .gallery-section {
     min-width: 0;
   }
 
-  .dara-photo-strip {
-    flex: 1;
-    min-width: 0;
-  }
-
   /* Maintain original 340:510 (2:3) ratio between columns */
-  .dara-col:nth-child(1) {
+  .dara-text-col + .dara-col {
     flex: 2 !important;
     width: auto !important;
     /* Scale margin-top proportionally with strip width (130/860 ≈ 15%) */
@@ -1262,7 +1242,7 @@ body.subject-page .gallery-section {
     min-width: 0;
   }
 
-  .dara-col:nth-child(2) {
+  .dara-text-col + .dara-col + .dara-col {
     flex: 3 !important;
     width: auto !important;
     margin-top: 0 !important;
@@ -1270,17 +1250,17 @@ body.subject-page .gallery-section {
   }
 
   /* Col 1 portrait fills its column */
-  .dara-col:nth-child(1) .dara-photo {
+  .dara-text-col + .dara-col .dara-photo {
     width: 100% !important;
   }
 
   /* Col 2 portrait: maintain original 348/510 ≈ 68% ratio within col */
-  .dara-col:nth-child(2) .dara-photo:first-child {
+  .dara-text-col + .dara-col + .dara-col .dara-photo:first-child {
     width: 68% !important;
   }
 
   /* Col 2 landscape: fill full column width */
-  .dara-col:nth-child(2) .dara-photo:last-child {
+  .dara-text-col + .dara-col + .dara-col .dara-photo:last-child {
     width: 100% !important;
   }
 
@@ -1291,7 +1271,7 @@ body.subject-page .gallery-section {
     margin-top: 4rem;
   }
 
-  .dara-p2-left-col {
+  .dara-p2 > .dara-photo {
     width: 300px !important;
   }
 
@@ -1735,23 +1715,9 @@ body.subject-page .gallery-section {
     padding-right: 0;
   }
 
-  .dara-p2-left-col {
-    width: 100%;
-  }
-
-  .dara-p2-left-col .dara-intro-text {
-    max-width: none;
-  }
-
   .dara-p3-text {
     flex: none;
     padding-top: 0;
-  }
-
-  .dara-photo-strip {
-    flex-direction: column;
-    width: 100%;
-    overflow-x: visible;
   }
 
   .dara-col {
